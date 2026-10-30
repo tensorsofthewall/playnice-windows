@@ -1,0 +1,105 @@
+name: Bug report
+description: Something in PlayNice does not work as expected.
+title: "[Bug]: "
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report this. A short, clear report helps most.
+
+        For a problem with sound itself (no audio, crackling, a speaker missing), please use **Audio issue** instead.
+        For a security problem, please do not post it here; it must be reported privately.
+  - type: input
+    id: summary
+    attributes:
+      label: Summary
+      description: One sentence that says what went wrong.
+      placeholder: "For example: Save is greyed out after I rename a setup"
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: PlayNice version
+      description: In PlayNice, open the menu and choose About PlayNice. The version is shown there.
+      placeholder: "For example: 0.1.0-beta.1"
+    validations:
+      required: true
+  - type: input
+    id: windows
+    attributes:
+      label: Windows version
+      description: Press the Windows key, type "winver" and press Enter.
+      placeholder: "For example: Windows 11, version 25H2 (build 26200)"
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Affected area
+      options:
+        - Choosing the audio source
+        - Adding or removing speakers
+        - Starting or stopping playback
+        - Settings
+        - Start at sign-in
+        - Installer or update
+        - Window, tray or notifications
+        - Exporting a diagnostic report
+        - Something else
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: Describe what you saw. Quote any message exactly.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What should have happened
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: The smallest set of steps that shows the problem.
+      placeholder: |
+        1. Open PlayNice
+        2. ...
+        3. ...
+    validations:
+      required: false
+  - type: dropdown
+    id: frequency
+    attributes:
+      label: How often does it happen
+      options:
+        - Every time
+        - Often
+        - Sometimes
+        - Once
+        - I have not tried again
+    validations:
+      required: false
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Diagnostic report (optional)
+      description: |
+        In PlayNice, open Settings, choose **Export diagnostic report…**, review it, then drag the ZIP file into this box.
+        Anything attached to a public issue may be accessible to anyone, and a diagnostic report contains system information. Read the ZIP before you attach it, and do not attach it if you are not comfortable sharing it.
+        You do not need to attach one to submit this issue.
+    validations:
+      required: false
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots (optional)
+      description: Drag images into this box. Please do not include anything private.
+    validations:
+      required: false

@@ -1,0 +1,119 @@
+name: Audio issue
+description: The sound is wrong, missing or out of step.
+title: "[Audio]: "
+labels: ["audio", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Sound problems depend on the devices involved, so a few details about them help a lot.
+        Please describe devices by kind (for example "Bluetooth speaker") rather than by serial number or address.
+  - type: dropdown
+    id: problem-type
+    attributes:
+      label: Type of problem
+      options:
+        - No audio
+        - Dropouts or crackling
+        - Device not detected
+        - Volume or mute
+        - Audio delay or synchronization
+        - Device reconnect or sleep recovery
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: PlayNice version
+      description: In PlayNice, open the menu and choose About PlayNice.
+    validations:
+      required: true
+  - type: input
+    id: windows
+    attributes:
+      label: Windows version
+      description: Press the Windows key, type "winver" and press Enter.
+    validations:
+      required: true
+  - type: dropdown
+    id: source
+    attributes:
+      label: Audio source
+      description: Where the sound comes from in PlayNice.
+      options:
+        - VB-CABLE
+        - Another playback device
+        - I am not sure
+    validations:
+      required: true
+  - type: checkboxes
+    id: output-kinds
+    attributes:
+      label: Kinds of speakers in the setup
+      description: Tick every kind that applies.
+      options:
+        - label: Bluetooth
+        - label: USB
+        - label: HDMI or DisplayPort (monitor or TV)
+        - label: Built-in or analog (3.5 mm)
+        - label: Other
+    validations:
+      required: false
+  - type: dropdown
+    id: speaker-count
+    attributes:
+      label: Number of active speakers
+      options:
+        - "1"
+        - "2"
+        - "3"
+        - "4"
+    validations:
+      required: true
+  - type: input
+    id: where-playing
+    attributes:
+      label: What was playing
+      description: The program or website, for example "a web browser playing a video".
+    validations:
+      required: false
+  - type: textarea
+    id: heard
+    attributes:
+      label: What you heard
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+    validations:
+      required: true
+  - type: dropdown
+    id: sleep
+    attributes:
+      label: Does it happen after sleep, or after a speaker reconnects?
+      options:
+        - "Yes"
+        - "No"
+        - I am not sure
+    validations:
+      required: true
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Diagnostic report (optional)
+      description: |
+        In PlayNice, open Settings, choose **Export diagnostic report…**, review it, then drag the ZIP file into this box.
+        Anything attached to a public issue may be accessible to anyone, and a diagnostic report contains system information. Read the ZIP before you attach it, and do not attach it if you are not comfortable sharing it.
+        You do not need to attach one to submit this issue.
+    validations:
+      required: false
+  - type: textarea
+    id: media
+    attributes:
+      label: Screenshots or a short recording (optional)
+      description: Drag files into this box. A phone recording of what you hear is fine.
+    validations:
+      required: false

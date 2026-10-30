@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Report a security problem privately
+    url: https://github.com/tensorsofthewall/playnice-windows/security/advisories/new
+    about: Use this for vulnerabilities and anything sensitive. Do not post security problems as public issues.
+  - name: Reporting a problem
+    url: https://github.com/tensorsofthewall/playnice-windows/blob/main/docs/reporting-a-bug.md
+    about: How to report a problem clearly, and how to export a diagnostic report.
+  - name: Troubleshooting
+    url: https://github.com/tensorsofthewall/playnice-windows/blob/main/docs/troubleshooting.md
+    about: Common problems and what to check in Windows Sound settings.
