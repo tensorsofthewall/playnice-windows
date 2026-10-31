@@ -14,9 +14,9 @@ The PlayNice desktop application uses these Qt libraries: Qt6Core, Qt6Gui, Qt6Ne
 
 **How Qt is used.** The Qt libraries are separate `Qt6*.dll` files and plug-in folders next to `playnice.exe`; they are dynamically linked, not built into PlayNice's own programs.
 
-**Qt source code.** The Qt Company publishes the source code of Qt releases at <https://download.qt.io/official_releases/qt/>.
+**Qt source code.** The Qt files in a PlayNice installer are Qt 6.12.0 (the modules qtbase and qtsvg), copied from The Qt Company's kit without change. The `licenses` folder of the installation contains `QT-SOURCE-OFFER.txt`, a written offer to give you the corresponding source code (the two official archives, named there with their SHA-256 values). To ask, open an issue titled "Qt source request" at <https://github.com/tensorsofthewall/playnice-windows/issues/new/choose>. The Qt Company also publishes the archives at <https://download.qt.io/official_releases/qt/6.12/6.12.0/submodules/>.
 
-Qt contains third-party code that has its own licences. See Qt's own documentation of the licences used in Qt for details.
+Qt contains third-party code that has its own licences. The notices for that code are in the installation's `licenses` folder (`QT-THIRD-PARTY-NOTICES.txt`).
 
 ## Microsoft Visual C++ Redistributable
 
