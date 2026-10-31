@@ -42,10 +42,21 @@ What to do:
 
 1. **Check where the file came from.** It must come from this repository's Releases page, and its SHA-256 checksum must match the one on the release page. If either is not true, delete it.
 2. **Read the warning.** Windows SmartScreen (a "Windows protected your PC" window) may show **Unknown publisher**. That is expected for an unsigned program. SmartScreen's **More info** shows the file name and publisher. Continuing past a SmartScreen warning is your own decision, per file; it is not something PlayNice can do for you. If the checksum did not match, do not continue.
-3. **If Smart App Control or another policy blocks it outright** and offers no way to continue, stop there. Do **not** turn Smart App Control off, and do not turn off Defender or SmartScreen, to get around it. Those protections are hard to switch back on. Wait for a signed release, or [report that it was blocked](reporting-a-bug.md#startup-and-installer-problems) with the exact message.
-4. **If your antivirus reports a detection**, do not add an exclusion and do not restore a quarantined file. Report it, quoting the name it shows.
+3. **If Smart App Control blocks it outright**, see [If Smart App Control blocks PlayNice](#if-smart-app-control-blocks-playnice) below. If a work or school policy blocks it, stop there and ask whoever manages the computer, or [report that it was blocked](reporting-a-bug.md#startup-and-installer-problems) with the exact message.
+4. **If your antivirus reports a detection** (for example Microsoft Defender names a threat), do not turn Defender off, do not add an exclusion and do not restore a quarantined file. Report it, quoting the name it shows. Do not turn off SmartScreen to get around its warning either; its **More info** page lets you continue per file.
 
-PlayNice's installer never changes Windows security settings, and PlayNice does not ask you to.
+PlayNice's installer never changes Windows security settings.
+
+### If Smart App Control blocks PlayNice
+
+PlayNice is currently **unsigned**. Smart App Control (SAC) is a Windows 11 feature that blocks apps it does not recognise and that have no valid signature, so it may block installing or starting PlayNice. Microsoft says SAC has no exception for a single app.
+
+To see whether SAC is on, open **Windows Security > App & browser control > Smart App Control settings**.
+
+If SAC blocks PlayNice, you can wait for a signed release or, if you choose, turn SAC **Off** there. That is your decision. It turns SAC off for the whole computer and every app, not just PlayNice, and it does not change Microsoft Defender. Do not turn off Defender or add exclusions.
+
+- Microsoft says recent Windows updates let you turn SAC back on later without reinstalling Windows, so keep Windows 11 (25H2 or 26H2) fully updated. On other configurations, for example a managed computer, Windows in S mode, or a build without those updates, turning it back on may need a reset or reinstall of Windows. Microsoft's [FAQ](https://support.microsoft.com/en-us/windows/security/threat-malware-protection/smart-app-control-frequently-asked-questions) does not list every case, so read it before you switch SAC off.
+- If the **On** switch is grayed out, install the latest Windows Update first. Microsoft's [October 2026 update note (KB5127648)](https://support.microsoft.com/en-au/servicing/os/windows-11/2026/10/kb5127648-windows-11-24h2-25h2-26h2-security-update) says this was fixed for Windows 11 25H2 and 26H2 by updates released on or after 27 October 2026, and describes a workaround for other cases.
 
 ## Upgrade
 

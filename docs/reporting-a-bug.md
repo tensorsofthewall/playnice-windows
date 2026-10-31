@@ -56,7 +56,7 @@ Say what you heard and what you expected, and describe the devices by kind (a Bl
 
 ## Startup and installer problems
 
-Say which installer you used, whether you installed for yourself or for all users, and what Windows showed. If Windows blocked or warned about the installer, quote the message exactly. Do not turn off Windows security features to work around it.
+Say which installer you used, whether you installed for yourself or for all users, and what Windows showed. If Windows blocked or warned about the installer, quote the message exactly. Do not turn off Defender or SmartScreen to work around it; the options for Smart App Control are in the [installation guide](installation.md#if-smart-app-control-blocks-playnice).
 
 For a sign-in problem, also say whether **Start PlayNice at sign-in** was on, whether the tray icon appeared, and whether `playnice.exe` and `playnice-control.exe` were running (Task Manager, **Details** tab).
 

@@ -27,7 +27,7 @@ What you need: 64-bit Windows 11, a wired speaker (or headphones, or a monitor w
 3. Check the file as described in [Installation](installation.md#download), then run it and choose **Install for me only**.
 4. Leave **Start PlayNice** ticked on the last page, or open PlayNice later from the Start menu.
 
-If Windows shows a warning about the installer, read [Windows warnings](installation.md#windows-warnings) first. Do not turn off any Windows protection to get past it.
+If Windows shows a warning about the installer, read [Windows warnings](installation.md#windows-warnings) first, including the options if Smart App Control blocks it. Do not turn off Defender or SmartScreen to get past it.
 
 The first time PlayNice opens it may say **The PlayNice controller is not running**. The controller is a small background program that holds your setups and runs the audio. Choose **Start controller**. You can leave PlayNice open on its first screen while you do Steps 2 to 4.
 

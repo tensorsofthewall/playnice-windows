@@ -46,7 +46,7 @@ No. PlayNice is proprietary software. This repository is for downloads, document
 
 ## Windows warns about the installer. What should I do?
 
-The installer is not yet signed, so Windows may warn about it or block it. Only use an installer from this repository's Releases page, check its checksum, and do not turn off Windows security features or add exclusions to run it. See [Installation](installation.md#windows-warnings).
+The installer is not yet signed, so Windows may warn about it or block it. Only use an installer from this repository's Releases page, check its checksum, and do not turn off Defender or SmartScreen or add exclusions to run it. See [Installation](installation.md#windows-warnings), and [If Smart App Control blocks PlayNice](installation.md#if-smart-app-control-blocks-playnice) if Smart App Control stops it.
 
 ## Does PlayNice send my information anywhere?
 

@@ -179,7 +179,7 @@ The report works while audio plays, and also while the controller is not running
 
 ## Windows warns about the installer
 
-The installer is not yet signed, so Windows may warn about it or block it. See [Windows warnings](installation.md#windows-warnings). Do not turn off Windows protections to run it.
+The installer is not yet signed, so Windows may warn about it or block it. See [Windows warnings](installation.md#windows-warnings), and [If Smart App Control blocks PlayNice](installation.md#if-smart-app-control-blocks-playnice) if it is stopped by Smart App Control. Do not turn off Defender or SmartScreen to run it.
 
 ## Check Windows Sound settings
 
