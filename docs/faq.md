@@ -10,7 +10,7 @@ It plays your computer's sound, or the sound of one program, on several audio ou
 
 ## Why do I need VB-CABLE?
 
-Windows plays a program's sound on one device. PlayNice needs a virtual playback device, **CABLE Input**, to receive that sound before it sends it to your speakers. VB-CABLE is a separate product from VB-Audio, and you install it yourself from <https://vb-audio.com/Cable/>. PlayNice does not include or install it.
+Windows plays a program's sound on one device. PlayNice needs a virtual playback device, **CABLE Input**, to receive that sound before it sends it to your speakers. VB-CABLE is a separate donationware product from VB-Audio Software (<https://www.vb-cable.com>). The PlayNice installer carries VB-Audio's package, and PlayNice starts VB-Audio's installer when you choose **Install VB-CABLE**; you can also install it yourself from <https://vb-audio.com/Cable/>. VB-Audio's installer asks for administrator permission and Windows must restart afterwards. See [Getting started](getting-started.md#2-install-vb-cable-from-playnice).
 
 ## Will speakers be perfectly in step?
 
@@ -43,6 +43,14 @@ Only if you turn on **Start PlayNice at sign-in** in Settings. It is off by defa
 ## Is PlayNice open source?
 
 No. PlayNice is proprietary software. This repository is for downloads, documentation and support, and does not contain the source code.
+
+## Does PlayNice need administrator rights?
+
+Not for the recommended install (**Install for me only**). Only VB-Audio's installer, and its removal tool, ask Windows for administrator permission, and only after you choose **Install VB-CABLE** (or **Remove VB-CABLE** while uninstalling). The VB-Audio driver is signed by VB-Audio and Microsoft; that is separate from PlayNice's own installer, which is currently not signed.
+
+## Does uninstalling PlayNice remove VB-CABLE?
+
+Only if you choose it. After you confirm the uninstall, Setup asks **Also uninstall VB-CABLE?**; **Keep VB-CABLE** is the default, a silent uninstall always keeps it, and other programs may use it. Removing it opens VB-Audio's own setup and needs a restart. See [Installation](installation.md#uninstall).
 
 ## Windows warns about the installer. What should I do?
 

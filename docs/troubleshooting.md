@@ -48,10 +48,10 @@ If you cannot route one program, you can instead set **CABLE Input** as the Wind
 
 PlayNice detects a VB-CABLE playback device that Windows lists and that is switched on. Check, in order:
 
-1. **Is it installed?** In **Settings > System > Sound**, look for **CABLE Input (VB-Audio Virtual Cable)** under **Output**. If it is missing, install VB-CABLE from <https://vb-audio.com/Cable/> as in [Getting started](getting-started.md#2-download-vb-cable-from-the-official-site).
-2. **Did you restart Windows after installing?** VB-Audio's installer usually asks for it. Restart, then look again.
+1. **Is it installed?** In **Settings > System > Sound**, look for **CABLE Input (VB-Audio Virtual Cable)** under **Output**. If it is missing, choose **Install VB-CABLE** on PlayNice's first screen or in the **Audio source** card ([Getting started](getting-started.md#2-install-vb-cable-from-playnice)), or install it yourself from <https://vb-audio.com/Cable/>. If PlayNice says permission was not given or the setup was closed, nothing was changed: choose **Try again**. If it says VB-CABLE needs attention, it is installed but not working; follow the steps it shows. PlayNice does not start VB-Audio's installer again while VB-CABLE is already installed, because that installer would offer to remove it.
+2. **Did you restart Windows after installing?** VB-CABLE needs a restart. PlayNice says **Restart Windows to finish setting up the audio driver** and never restarts Windows by itself. Restart, open PlayNice, then choose **Check again**.
 3. **Is it disabled?** In **Settings > System > Sound > More sound settings**, open the **Playback** tab, right-click an empty area, and tick **Show Disabled Devices**. If **CABLE Input** is disabled, right-click it and choose **Enable**.
-4. **Did you install the right one?** Use the 64-bit setup program, run as administrator. The 32-bit one is for 32-bit Windows.
+4. **Did you install the right one?** PlayNice starts the 64-bit setup program from VB-Audio's package. If you install by hand, use the 64-bit one (its name ends in `_x64`) as administrator.
 5. **Choose Check again** on the first screen, or reopen the **Audio source** card with **Change…**. PlayNice reads the list of devices when you ask.
 6. **Does it show an error in Windows' Device Manager?** Under **Sound, video and game controllers**, a warning icon on the VB-Audio entry means the driver is not working. That is a VB-Audio installation problem; reinstall using VB-Audio's instructions or ask VB-Audio.
 

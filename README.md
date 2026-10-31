@@ -6,8 +6,8 @@
 
 <p align="center"><strong>Play audio through multiple speakers at once on Windows 11.</strong></p>
 
-> **Status:** PlayNice is in early testing. The first public beta, [v0.1.0-beta.1](https://github.com/tensorsofthewall/playnice-windows/releases/tag/v0.1.0-beta.1),
-> is available on the [Releases page](https://github.com/tensorsofthewall/playnice-windows/releases) (marked Pre-release). The installer is not signed.
+> **Status:** PlayNice is in early testing. The newest public beta, [v0.1.0-beta.2](https://github.com/tensorsofthewall/playnice-windows/releases/tag/v0.1.0-beta.2),
+> is available on the [Releases page](https://github.com/tensorsofthewall/playnice-windows/releases) (marked Pre-release); [v0.1.0-beta.1](https://github.com/tensorsofthewall/playnice-windows/releases/tag/v0.1.0-beta.1) stays available. The installer is not signed.
 
 PlayNice sends the sound of your computer, or of one program, to several audio outputs at the same time: for
 example a monitor, a USB headset and a Bluetooth speaker.
@@ -39,7 +39,7 @@ example a monitor, a USB headset and a Bluetooth speaker.
 
 | | |
 | --- | --- |
-| **Download** | [v0.1.0-beta.1](https://github.com/tensorsofthewall/playnice-windows/releases/tag/v0.1.0-beta.1) (all [Releases](https://github.com/tensorsofthewall/playnice-windows/releases); betas are marked Pre-release) |
+| **Download** | [v0.1.0-beta.2](https://github.com/tensorsofthewall/playnice-windows/releases/tag/v0.1.0-beta.2) (all [Releases](https://github.com/tensorsofthewall/playnice-windows/releases); betas are marked Pre-release) |
 | **Install** | [Installation](docs/installation.md) |
 | **First use** | [Getting started](docs/getting-started.md), a walkthrough for beginners |
 | **Every setting** | [Settings guide](docs/settings-guide.md) |
@@ -48,11 +48,13 @@ example a monitor, a USB headset and a Bluetooth speaker.
 | **Suggest a feature** | [Feature request](https://github.com/tensorsofthewall/playnice-windows/issues/new/choose) |
 | **Questions** | [FAQ](docs/faq.md) |
 
-## VB-CABLE is a separate prerequisite
+## VB-CABLE is a separate product
 
 To send the sound of Windows (or of one program) to PlayNice, you need a virtual audio device. PlayNice works with
-**VB-CABLE** from VB-Audio. It is a separate product, made and licensed by VB-Audio, and it is **not** included in or
-installed by PlayNice. Get it only from the official site: <https://vb-audio.com/Cable/>. The [walkthrough](docs/getting-started.md) shows how to install it and check it, step by step.
+**VB-CABLE**, third-party donationware made by VB-Audio Software (<https://www.vb-cable.com>). It is separate from PlayNice and
+VB-Audio's own terms apply to it. If it is missing, PlayNice offers **Install VB-CABLE** on its first screen: you approve VB-Audio's own
+installer, restart Windows, and come back. You can also install it yourself from <https://vb-audio.com/Cable/>. When you uninstall PlayNice
+you can choose to remove VB-CABLE too; keeping it is the default. The [walkthrough](docs/getting-started.md) shows every step.
 
 ## What to expect
 

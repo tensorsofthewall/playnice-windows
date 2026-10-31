@@ -24,4 +24,6 @@ The Microsoft Visual C++ Redistributable (x64) is **not** included in the PlayNi
 
 ## VB-CABLE
 
-VB-CABLE is a virtual audio device made and licensed by VB-Audio. It is **not** included in or installed by PlayNice. PlayNice can use it when you install it yourself from <https://vb-audio.com/Cable/>. VB-CABLE and VB-Audio are the property of their owners.
+VB-CABLE is a virtual audio device made by VB-Audio Software (Vincent Burel). Its origin is <https://www.vb-cable.com> (also <https://vb-audio.com/Cable/>). VB-CABLE is donationware: all participations are welcome, and you can support VB-Audio directly at <https://vb-audio.com/Services/licensing.htm>. It is independent of PlayNice and is not developed or owned by PlayNice; VB-Audio's own licence terms apply to it.
+
+The PlayNice installer carries VB-Audio's package `VBCABLE_Driver_Pack45.zip`, exactly as VB-Audio published it, together with VB-Audio's own readme and licence text (installed in the `licenses` folder). PlayNice starts VB-Audio's own setup program from it only when you choose **Install VB-CABLE**, or **Remove VB-CABLE** while uninstalling. The standard VB-CABLE only is included; VB-CABLE A+B, C+D, HiFi Cable and Voicemeeter are not. VB-CABLE and VB-Audio are the property of their owners.

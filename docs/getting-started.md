@@ -13,7 +13,7 @@ Browser  ->  CABLE Input  ->  PlayNice  ->  wired speaker
 (Windows plays here)         (picks the sound up)  ->  Bluetooth speaker
 ```
 
-- **VB-CABLE** is a virtual audio device made by a different company (VB-Audio). It is not part of PlayNice, and VB-Audio's own terms apply to it. It adds two entries to Windows: **CABLE Input** (an *output*, where programs play their sound) and **CABLE Output** (an *input*, which PlayNice does not use).
+- **VB-CABLE** is a virtual audio device made by a different company (VB-Audio Software) and is donationware. It is not part of PlayNice, and VB-Audio's own terms apply to it. PlayNice can start VB-Audio's installer for you (Step 2). It adds two entries to Windows: **CABLE Input** (an *output*, where programs play their sound) and **CABLE Output** (an *input*, which PlayNice does not use).
 - Sound sent to CABLE Input is **not heard** by itself. You hear it only while PlayNice is playing it on your real speakers. That is why this guide has you get PlayNice ready *before* you send a program's sound to the cable.
 - PlayNice never changes your Windows default playback device, and never changes which device a program uses. You make that choice yourself, in Step 9.
 
@@ -23,7 +23,7 @@ What you need: 64-bit Windows 11, a wired speaker (or headphones, or a monitor w
 
 1. Open the [Releases page](https://github.com/tensorsofthewall/playnice-windows/releases) of this repository.
 2. Download the installer, `PlayNice-<version>-Setup-x64.exe`, from the newest entry. While PlayNice is in beta, releases are marked **Pre-release**; that is expected.
-   - The first beta is [v0.1.0-beta.1](https://github.com/tensorsofthewall/playnice-windows/releases/tag/v0.1.0-beta.1). Its installer is listed under **Assets**, next to `SHA256SUMS.txt`.
+   - The newest beta is [v0.1.0-beta.2](https://github.com/tensorsofthewall/playnice-windows/releases/tag/v0.1.0-beta.2); the earlier [v0.1.0-beta.1](https://github.com/tensorsofthewall/playnice-windows/releases/tag/v0.1.0-beta.1) stays available but cannot install VB-CABLE for you. Each installer is listed under **Assets**, next to `SHA256SUMS.txt`.
 3. Check the file as described in [Installation](installation.md#download), then run it and choose **Install for me only**.
 4. Leave **Start PlayNice** ticked on the last page, or open PlayNice later from the Start menu.
 
@@ -31,31 +31,42 @@ If Windows shows a warning about the installer, read [Windows warnings](installa
 
 The first time PlayNice opens it may say **The PlayNice controller is not running**. The controller is a small background program that holds your setups and runs the audio. Choose **Start controller**. You can leave PlayNice open on its first screen while you do Steps 2 to 4.
 
-## 2. Download VB-CABLE from the official site
+## 2. Install VB-CABLE from PlayNice
 
-1. Open <https://vb-audio.com/Cable/> in your browser. Use this address only; do not download VB-CABLE from other sites.
-2. Download the VB-CABLE driver pack (a ZIP file). Read VB-Audio's page for the licence and terms that apply to it.
-3. When the download finishes, find the ZIP in your Downloads folder.
+If PlayNice's first screen already says **Audio source ready**, or Windows already lists **CABLE Input**, skip to Step 5.
 
-PlayNice does not download, install or update VB-CABLE for you.
+1. In PlayNice, the **Audio source** card says **Set up your audio source** when VB-CABLE is missing.
+2. Choose **Install VB-CABLE**. (If you would rather do it yourself, choose **Install manually** and follow Step 4.)
+3. Windows asks for permission to run VB-Audio's setup program. Only that program gets administrator rights; PlayNice itself keeps running as you.
+4. VB-Audio's setup window opens. Choose **Install Driver** there and accept its prompts. Windows may ask whether to trust software from VB-Audio. Read the prompt; this installs a driver, and doing so is your decision.
+5. When VB-Audio's setup closes, PlayNice looks at what Windows now has and tells you the result. It does not take the setup's word for it.
 
-## 3. Extract the ZIP
+About VB-CABLE: it is third-party **donationware** made by VB-Audio Software (<https://www.vb-cable.com>). It is independent of PlayNice and VB-Audio's own terms apply to it. If you find it useful, you can support VB-Audio directly on their [donation and licensing page](https://vb-audio.com/Services/licensing.htm). The PlayNice installer carries VB-Audio's package so no download is needed, and PlayNice starts it only when you choose **Install VB-CABLE**. VB-Audio's driver is signed by VB-Audio and Microsoft; that is separate from PlayNice's own installer, which is currently **not** signed.
 
-Windows cannot run the installer from inside a ZIP file.
+If you are told that permission was not given, or that the setup was closed, nothing was changed on your computer. Choose **Try again** or **Install manually**.
 
-1. Right-click the downloaded ZIP and choose **Extract All…**, then **Extract**.
-2. Open the new folder. It contains several files, including setup programs for 32-bit and 64-bit Windows.
+> *This installation path is new in v0.1.0-beta.2. It has been checked with automated tests, but the maintainer's test of a real installation and restart on a clean Windows computer is still being done, so treat it as untested on your own computer. No screenshot of VB-Audio's window is shown here.*
 
-## 4. Install VB-CABLE as administrator
+## 3. Restart Windows
 
-1. In the extracted folder, find the **64-bit** setup program (its name ends in `_x64`).
-2. Right-click it and choose **Run as administrator**. Accept the Windows prompt.
-3. Follow VB-Audio's installer (it offers an **Install Driver** button) and accept its prompts. Windows may ask whether to trust software from VB-Audio. Read the prompt; this installs a driver, and doing so is your decision. These steps describe VB-Audio's installer as documented by VB-Audio; PlayNice's own documentation has not run it for this page.
-4. **Restart Windows** when the installer asks, or afterwards if it does not.
+VB-CABLE needs Windows to restart before it works. PlayNice then says **VB-CABLE installed** and **Restart Windows to finish setting up the audio driver.**
 
-Do not use the 32-bit setup program on 64-bit Windows 11. If installing fails, follow VB-Audio's instructions or contact VB-Audio; PlayNice cannot repair their installer.
+- Choose **Restart now** (Windows asks your other programs to save first), or **Restart later**.
+- Until Windows has restarted, you can keep naming your setup, but audio cannot start.
+- PlayNice never restarts Windows by itself. If you choose **Restart now**, the setup name you typed is remembered.
 
-> *[Screenshot to be added: VB-CABLE's installer window. It has not been captured because installing VB-CABLE is a change to the computer that was not done for this page.]*
+After the restart, open PlayNice again. If it still says **VB-CABLE installed** with a restart message, choose **Check again**.
+
+## 4. Or install VB-CABLE yourself
+
+You only need this if you chose **Install manually**, or the steps above failed.
+
+1. Open <https://vb-audio.com/Cable/> and use this address only. Download the VB-CABLE driver pack (a ZIP file) and read VB-Audio's page for its licence and terms.
+2. Right-click the ZIP, choose **Extract All…**, then **Extract**. Windows cannot run the installer from inside a ZIP.
+3. In the extracted folder, right-click the **64-bit** setup program (its name ends in `_x64`) and choose **Run as administrator**. Do not use the 32-bit one.
+4. Choose **Install Driver** and **restart Windows** when asked.
+
+If installing fails, follow VB-Audio's instructions or contact VB-Audio; PlayNice cannot repair their installer.
 
 ## 5. Check that Windows now lists the cable
 
@@ -90,9 +101,9 @@ PlayNice can only use speakers that Windows lists and that are switched on and c
 A **setup** is a saved list of speakers that play together. You can have several, for example "Living room" and "Desk only".
 
 1. Open PlayNice. If it says the controller is not running, choose **Start controller**.
-2. The first screen is **Set up your speakers**. Under **1. Audio source**, it should say **Audio source: found** and **Ready: VB-CABLE "CABLE Input (VB-Audio Virtual Cable)"**.
-   - If it says **not found**, install VB-CABLE (Steps 2 to 5) and choose **Check again**. You can still carry on and add speakers, but audio will not start until the cable is found.
-3. Under **2. Name your setup**, type a name, for example `Living room`, and choose **Continue to speakers**.
+2. The first screen is **Set up your speakers**. The **Audio source** card should say **Audio source ready** and **Ready: VB-CABLE "CABLE Input (VB-Audio Virtual Cable)"**.
+   - If it says **Set up your audio source**, install VB-CABLE (Steps 2 to 5) and choose **Check again** afterwards. You can still carry on and add speakers, but audio will not start until the cable is found.
+3. Under **Name your setup**, type a name, for example `Living room`, and choose **Continue to speakers**.
 
 Nothing is saved yet. PlayNice saves the setup in Step 8.
 
@@ -101,11 +112,11 @@ Nothing is saved yet. PlayNice saves the setup in Step 8.
   <img src="../assets/screenshots/first-run-cable-found-light.png" alt="PlayNice first screen: the audio source is found and the setup is being named" width="640">
 </picture>
 
-If the cable is not found, the screen instead says **Audio source: not found** and offers **Check again**:
+If the cable is not found, the screen instead says **Set up your audio source** and offers **Install VB-CABLE**, **Install manually** and **Check again**:
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="../assets/screenshots/first-run-cable-missing-dark.png">
-  <img src="../assets/screenshots/first-run-cable-missing-light.png" alt="PlayNice first screen when VB-CABLE is not found, with a link to the vendor and a Check again button" width="640">
+  <img src="../assets/screenshots/first-run-cable-missing-light.png" alt="PlayNice first screen when VB-CABLE is not found, with the Install VB-CABLE, Install manually and Check again buttons" width="640">
 </picture>
 
 *These screenshots use made-up device names.*
@@ -200,7 +211,7 @@ You can undo the routing at any time. PlayNice does not need to be involved.
 
 If a program stays silent after you stop PlayNice, it is probably still pointed at CABLE Input. See [Windows audio is silent after I stop PlayNice](troubleshooting.md#windows-audio-is-silent-after-i-stop-playnice).
 
-To remove VB-CABLE, use VB-Audio's own instructions. Uninstalling PlayNice does not remove it.
+VB-CABLE stays installed unless you remove it. PlayNice's uninstaller asks (see [Uninstall](installation.md#uninstall)); you can also use VB-Audio's own instructions.
 
 ## Next steps
 

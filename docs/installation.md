@@ -2,19 +2,19 @@
 
 PlayNice runs on 64-bit Windows 11. It installs no driver and needs no administrator rights for the recommended install. For the whole path from download to sound, see [Getting started](getting-started.md).
 
-> **Status:** the first public beta, [v0.1.0-beta.1](https://github.com/tensorsofthewall/playnice-windows/releases/tag/v0.1.0-beta.1), is published on the [Releases page](https://github.com/tensorsofthewall/playnice-windows/releases) as a Pre-release. The steps below describe its installer. The maintainer reports that one installed copy passed native sign-in, tray and Explorer-recovery checks (see [Start at sign-in](settings-guide.md#start-at-sign-in)); the exact installer file of that copy was not recorded. Installation has not been tested on a clean computer or with more than one user account.
+> **Status:** the newest public beta, [v0.1.0-beta.2](https://github.com/tensorsofthewall/playnice-windows/releases/tag/v0.1.0-beta.2), is published on the [Releases page](https://github.com/tensorsofthewall/playnice-windows/releases) as a Pre-release; [v0.1.0-beta.1](https://github.com/tensorsofthewall/playnice-windows/releases/tag/v0.1.0-beta.1) stays available. The steps below describe the newest installer. The maintainer reports that one installed copy passed native sign-in, tray and Explorer-recovery checks (see [Start at sign-in](settings-guide.md#start-at-sign-in)); the exact installer file of that copy was not recorded. Installation has not been tested on a clean computer or with more than one user account. Installing and removing VB-CABLE from PlayNice is new in beta.2 and is being tested separately by the maintainer; it has not been confirmed on a clean computer.
 
 ## Before you start
 
 - **Microsoft Visual C++ Redistributable 2015-2022 (x64).** Most computers already have it. PlayNice's installer checks for it and warns you if it is missing. If PlayNice reports a missing `VCRUNTIME140` or `MSVCP140` file, install it from Microsoft: <https://aka.ms/vs/17/release/vc_redist.x64.exe>.
-- **VB-CABLE** (a separate product) is needed to send the sound of Windows or of one program to PlayNice. See [Getting started](getting-started.md#2-download-vb-cable-from-the-official-site). You can install PlayNice first. PlayNice's installer does not install it.
+- **VB-CABLE** (a separate product from VB-Audio Software, donationware) is needed to send the sound of Windows or of one program to PlayNice. PlayNice's installer carries VB-Audio's package but does **not** install it. On its first screen PlayNice offers **Install VB-CABLE**; only then does Windows ask for administrator permission, for VB-Audio's installer only. PlayNice itself does not need administrator rights for the recommended install. See [Getting started](getting-started.md#2-install-vb-cable-from-playnice). You can install PlayNice first.
 
 ## Download
 
 Use the [Releases page](https://github.com/tensorsofthewall/playnice-windows/releases) of this repository only, and pick the release you want from the list.
 
 - While PlayNice is in beta its releases are marked **Pre-release**. GitHub's "latest release" link skips pre-releases, so this documentation links to the full list instead.
-- The installer is named `PlayNice-<version>-Setup-x64.exe`, where `<version>` is the release's version (for the first beta, `0.1.0-beta.1`).
+- The installer is named `PlayNice-<version>-Setup-x64.exe`, where `<version>` is the release's version (for example `0.1.0-beta.2`).
 - A release's page lists the installer's file name and its SHA-256 checksum.
 
 To check the file in PowerShell, replace the name with the file you downloaded:
@@ -32,7 +32,7 @@ Compare the result with the checksum on the release page. A matching checksum sh
    **Install for all users** puts the program in the shared Program Files folder and asks for administrator rights. Every account can then start PlayNice, and each account keeps its own setups and settings.
 3. Leave **Start PlayNice** ticked to open it when Setup finishes, or untick it.
 
-The installer adds a Start menu shortcut and an uninstaller. It does not change your Windows default audio device, does not install a driver, and does not turn on starting at sign-in; that is a setting inside PlayNice.
+The installer adds a Start menu shortcut, an **Uninstall PlayNice** shortcut and an uninstaller. It does not change your Windows default audio device, does not install a driver itself (VB-CABLE is installed only if you choose **Install VB-CABLE** later), and does not turn on starting at sign-in; that is a setting inside PlayNice.
 
 ## Windows warnings
 
@@ -68,11 +68,11 @@ Run the newer installer. PlayNice keeps its identity, so it replaces the install
 
 ## Uninstall
 
-Open **Settings > Apps > Installed apps**, find **PlayNice** and choose **Uninstall**. Setup asks you to close the PlayNice window first, and asks before it stops audio that is playing.
+Open **Settings > Apps > Installed apps**, find **PlayNice** and choose **Uninstall**, or use **Uninstall PlayNice** in the Start menu (the same uninstaller). Setup asks you to close the PlayNice window first, and asks before it stops audio that is playing.
 
 - Uninstalling shuts down PlayNice's controller and removes PlayNice's sign-in startup entries.
 - Your setups and settings are kept in the `PlayNice` folder under `%LOCALAPPDATA%` so they are still there if you install again. Delete that folder yourself if you want them gone.
-- Uninstalling PlayNice does not remove VB-CABLE. Remove it separately, using VB-Audio's instructions.
+- If VB-CABLE is installed, Setup asks **Also uninstall VB-CABLE?** after you confirm the uninstall. **Keep VB-CABLE** is the default. VB-CABLE is a separate driver that other programs may use; choose **Remove VB-CABLE** only if nothing else needs it. Removing it asks Windows for administrator permission, opens VB-Audio's own setup (choose **Remove Driver** there), and needs a restart. If removal fails or you decline, PlayNice is still uninstalled and VB-CABLE stays. A silent uninstall never removes VB-CABLE.
 - If you routed a program to **CABLE Input** in Windows, that routing is not undone. See [Windows audio is silent after I stop PlayNice](troubleshooting.md#windows-audio-is-silent-after-i-stop-playnice).
 
 ## If installation fails
