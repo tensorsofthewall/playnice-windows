@@ -10,7 +10,7 @@ It plays your computer's sound, or the sound of one program, on several audio ou
 
 ## Why do I need VB-CABLE?
 
-PlayNice needs a virtual playback device to receive the sound before it sends it to your speakers. VB-CABLE is a separate product from VB-Audio, and you install it yourself from <https://vb-audio.com/Cable/>. PlayNice does not include or install it.
+Windows plays a program's sound on one device. PlayNice needs a virtual playback device, **CABLE Input**, to receive that sound before it sends it to your speakers. VB-CABLE is a separate product from VB-Audio, and you install it yourself from <https://vb-audio.com/Cable/>. PlayNice does not include or install it.
 
 ## Will speakers be perfectly in step?
 
@@ -26,15 +26,19 @@ No. It works with audio outputs that Windows lists as playback devices, but not 
 
 ## Does PlayNice change my Windows default audio device?
 
-No. You choose what plays to the cable in Windows yourself. See [Getting started](getting-started.md#3-send-sound-to-the-cable).
+No. PlayNice never changes your default playback device, and it never changes which device a program uses. You choose what plays to the cable in Windows yourself, usually for one program at a time in the Volume mixer. See [Getting started](getting-started.md#9-start-audio-then-route-one-program-to-the-cable).
+
+## Does closing the PlayNice window stop the audio?
+
+No. PlayNice has a window and a background controller that runs the audio. Closing the window, or quitting it, leaves audio running. Use **Stop audio** to stop it. See the [Settings guide](settings-guide.md#controller-shutdown).
 
 ## Why are the volume sliders tied to Windows?
 
-Each speaker's slider and mute button change that device's volume and mute in Windows, so the same volume applies outside PlayNice. They are not saved with a setup.
+Each speaker's slider and mute button change that device's volume and mute in Windows, so the same volume applies outside PlayNice. They are not saved with a setup, and they work while the setup is playing. See the [Settings guide](settings-guide.md#master-and-per-speaker-windows-volume).
 
 ## Does it start with Windows?
 
-Only if you turn on **Start PlayNice at sign-in** in Settings. It is off by default.
+Only if you turn on **Start PlayNice at sign-in** in Settings. It is off by default. See the [Settings guide](settings-guide.md#start-at-sign-in).
 
 ## Is PlayNice open source?
 
@@ -42,7 +46,7 @@ No. PlayNice is proprietary software. This repository is for downloads, document
 
 ## Windows warns about the installer. What should I do?
 
-The installer is not yet signed, so Windows may warn about it. Only use an installer from this repository's Releases page, and do not turn off Windows security features or add exclusions to run it. See [Installation](installation.md#windows-warnings).
+The installer is not yet signed, so Windows may warn about it or block it. Only use an installer from this repository's Releases page, check its checksum, and do not turn off Windows security features or add exclusions to run it. See [Installation](installation.md#windows-warnings).
 
 ## Does PlayNice send my information anywhere?
 

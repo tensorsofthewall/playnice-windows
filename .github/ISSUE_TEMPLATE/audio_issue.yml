@@ -26,7 +26,7 @@ body:
     id: version
     attributes:
       label: PlayNice version
-      description: In PlayNice, open the menu and choose About PlayNice.
+      description: In PlayNice, open the menu and choose About PlayNice. If PlayNice will not open, use the version in the installer's file name or in Settings, Apps, Installed apps; or write "cannot open".
     validations:
       required: true
   - type: input
@@ -105,7 +105,7 @@ body:
     attributes:
       label: Diagnostic report (optional)
       description: |
-        In PlayNice, open Settings, choose **Export diagnostic report…**, review it, then drag the ZIP file into this box.
+        In PlayNice, open Settings, choose **Export diagnostic report…**, review it, then drag the ZIP file into this box. Do not attach the raw files from "Open folder".
         Anything attached to a public issue may be accessible to anyone, and a diagnostic report contains system information. Read the ZIP before you attach it, and do not attach it if you are not comfortable sharing it.
         You do not need to attach one to submit this issue.
     validations:

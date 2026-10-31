@@ -39,9 +39,10 @@ example a monitor, a USB headset and a Bluetooth speaker.
 
 | | |
 | --- | --- |
-| **Download** | [Latest release](https://github.com/tensorsofthewall/playnice-windows/releases/latest) |
+| **Download** | [Releases](https://github.com/tensorsofthewall/playnice-windows/releases) (no beta is published yet) |
 | **Install** | [Installation](docs/installation.md) |
-| **First use** | [Getting started](docs/getting-started.md) |
+| **First use** | [Getting started](docs/getting-started.md), a walkthrough for beginners |
+| **Every setting** | [Settings guide](docs/settings-guide.md) |
 | **Something wrong?** | [Troubleshooting](docs/troubleshooting.md) |
 | **Report a problem** | [Open an issue](https://github.com/tensorsofthewall/playnice-windows/issues/new/choose) and read [Reporting a problem](docs/reporting-a-bug.md) first |
 | **Suggest a feature** | [Feature request](https://github.com/tensorsofthewall/playnice-windows/issues/new/choose) |
@@ -51,7 +52,7 @@ example a monitor, a USB headset and a Bluetooth speaker.
 
 To send the sound of Windows (or of one program) to PlayNice, you need a virtual audio device. PlayNice works with
 **VB-CABLE** from VB-Audio. It is a separate product, made and licensed by VB-Audio, and it is **not** included in or
-installed by PlayNice. Get it only from the official site: <https://vb-audio.com/Cable/>.
+installed by PlayNice. Get it only from the official site: <https://vb-audio.com/Cable/>. The [walkthrough](docs/getting-started.md) shows how to install it and check it, step by step.
 
 ## What to expect
 
@@ -60,7 +61,7 @@ add different delays. You set a delay for each speaker by ear, and an option kee
 long sessions. PlayNice does not measure delay for you, does not promise that picture and sound will match in video,
 and does not work with every audio device or every Bluetooth speaker. See [Troubleshooting](docs/troubleshooting.md).
 
-PlayNice never changes your Windows default audio device for you.
+PlayNice never changes your Windows default audio device, or which device a program uses, for you.
 
 ## About this repository
 
