@@ -14,7 +14,7 @@ example a monitor, a USB headset and a Bluetooth speaker.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/screenshots/outputs-dark.png">
-  <img src="assets/screenshots/outputs-light.png" alt="The PlayNice window playing one setup on two speakers, each with its own volume and mute" width="720">
+  <img src="assets/screenshots/outputs-light.png" alt="The PlayNice window playing one setup on two speakers, with the Send audio to PlayNice card, and a volume, mute and Test button for each speaker" width="720">
 </picture>
 
 *The screenshots on this page use made-up device names.*
@@ -26,6 +26,7 @@ example a monitor, a USB headset and a Bluetooth speaker.
 - **Select an audio source**: the sound of Windows, or of one program, sent to a virtual cable.
 - Save **speaker setups** and switch between them.
 - Set **volume and mute** for each speaker. These change the speaker's volume in Windows.
+- **Test** each speaker with a short, soft sound before you rely on it, and get guided help when you **can't hear audio**.
 - Choose **channels** for each speaker (stereo, left, right, mono or swapped sides).
 - Adjust **timing by ear** with a delay for each speaker.
 - **Start PlayNice at sign-in**, if you want it to.

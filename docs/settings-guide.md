@@ -101,6 +101,20 @@ PlayNice does not have a volume of its own. Its sliders are Windows' volumes:
 - If the keyboard volume keys control another device (the cable is not the Windows default output), the Master row says so. This is expected when you route only one program to the cable.
 - Setups saved with older software-volume settings show a notice with a **Remove old volume settings** button.
 
+### Test
+
+Each speaker row has a **Test** button. It plays a short, soft, generated sound (under a second) on that one speaker, for checking that the speaker works with PlayNice.
+
+- It uses the speaker you pressed it on, not the Windows default device, and it does not need any program to be sending sound to the cable.
+- It does not change the speaker's Windows volume or mute, and it does not start or change the setup. If the speaker is muted or at zero in Windows, PlayNice says so and plays nothing; unmute it or raise it yourself.
+- It is off while the playing setup uses that speaker (choose **Stop audio** first), while another test is playing, and for a speaker that is not connected. The button's tooltip says why.
+- *Test sound sent to ... Did you hear it?* means Windows accepted the sound. PlayNice cannot know whether you heard it, and it keeps no answer. A successful test says nothing about how well several speakers are lined up.
+- It stops by itself after about a second, and at the latest after a few seconds; closing the window ends it too.
+
+### Send audio to PlayNice and Can't hear audio?
+
+Under the audio source, a saved setup with a working VB-CABLE shows a card with one sentence about the state of playback and two buttons. **Open Windows Volume Mixer** opens that Windows Settings page (or the Sound page if Windows cannot open it); it changes nothing. **How does this work?** shows the five steps. **Can't hear audio?**, above the speaker list, lists what PlayNice can tell about why nothing is heard. It never changes a Windows setting.
+
 ### Channel modes
 
 For each speaker, open it and choose **Channels**:

@@ -127,6 +127,7 @@ If the cable is not found, the screen instead says **Set up your audio source** 
 2. Choose **Add a speaker**. A list of the playback devices Windows has appears.
 3. Select your **wired speaker** and choose **OK**.
 4. Choose **Save setup** at the top right.
+5. Optional: choose **Test** on the speaker's row. PlayNice plays a short, soft sound on that speaker only, so you can check it before anything else. It says *Test sound sent to ... Did you hear it?* That means Windows was given the sound, not that you heard it; if you heard nothing, see [No sound from one speaker](troubleshooting.md#no-sound-from-one-speaker). **Test** does not need VB-CABLE to carry any sound, and it never changes the speaker's Windows volume or mute: if the speaker is muted or at zero in Windows, PlayNice tells you instead. It is off while the playing setup uses that speaker; choose **Stop audio** first.
 
 PlayNice does not accept the cable itself as a speaker. If a device is listed as *unavailable* or *not available now*, switch it on or reconnect it, then use the refresh button in the list.
 
@@ -140,15 +141,15 @@ PlayNice does not accept the cable itself as a speaker. If a device is listed as
   <img src="../assets/screenshots/first-speaker-light.png" alt="A new setup with the cable as source and one speaker added, before saving" width="640">
 </picture>
 
-Saving does not start audio.
+Saving does not start audio. Once the setup is saved, PlayNice shows a card called **Send audio to PlayNice**, with the line *Setup saved. Start audio when you're ready.*
 
 ## 9. Start audio, then route one program to the cable
 
 Order matters here: start PlayNice first, so that sound sent to the cable has somewhere to go.
 
-1. In PlayNice, choose **Start audio**. The status becomes **Playing**.
+1. In PlayNice, choose **Start audio**. The status becomes **Playing**. The card now says *PlayNice is running. Send audio to CABLE Input to hear it through your speakers.* until it hears sound from the cable, and then *Playing on 2 speakers.* (the number of speakers that are playing).
 2. Start something playing in your browser, for example a video. At this moment you may hear it on your normal speakers, because the browser is still using the Windows default device.
-3. In Windows, open **Settings > System > Sound > Volume mixer**.
+3. In Windows, open **Settings > System > Sound > Volume mixer**. The card's **Open Windows Volume Mixer** button opens it for you (it only opens the page; PlayNice does not change any setting in it). **How does this work?** shows these steps again.
 4. Find your browser in the list. For that browser, set the **Output** (the device it plays to) to **CABLE Input (VB-Audio Virtual Cable)**. If you do not see an output list, open the browser's entry (the small arrow on its row) first.
    - A program usually appears in the mixer only after it has played sound. Play something, then look again.
    - Some programs only move to the new device after you pause and resume, or restart them.
@@ -159,6 +160,10 @@ Order matters here: start PlayNice first, so that sound sent to the cable has so
 **Check that it works:** you should hear the browser's sound on the wired speaker only. The Windows default device should be silent for that browser.
 
 **If you hear nothing:** see [No sound from any speaker](troubleshooting.md#no-sound-from-any-speaker). The usual causes are a browser still pointed at another device, or PlayNice not yet playing.
+
+You can also make **CABLE Input** the Windows default output. That sends all sound from the computer through PlayNice. It is optional, and PlayNice never does it for you. Sound sent to CABLE Input cannot be heard while PlayNice is stopped, so choose the default device again (or set the program's output back) if you stop PlayNice.
+
+**Can't hear anything?** Choose **Can't hear audio?** above the speaker list. PlayNice lists what it can tell: whether VB-CABLE is installed, whether a speaker is missing, muted in Windows or failed, and whether it has heard any sound from the cable recently. Silence alone is not an error: a paused video looks the same, so that hint only suggests checking the program's output in Volume Mixer.
 
 **Only that one program goes to PlayNice.** Everything else on the computer keeps using the Windows default device, so you will keep hearing notifications and other programs normally.
 
@@ -174,7 +179,7 @@ Both speakers should now play the browser's sound.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="../assets/screenshots/playing-two-speakers-dark.png">
-  <img src="../assets/screenshots/playing-two-speakers-light.png" alt="PlayNice playing a setup on two speakers, each with its own volume and a switch" width="640">
+  <img src="../assets/screenshots/playing-two-speakers-light.png" alt="PlayNice playing a setup on two speakers: the Send audio to PlayNice card on top, and for each speaker a volume slider, a Test button and a switch" width="640">
 </picture>
 
 ## 11. Adjust volume and timing

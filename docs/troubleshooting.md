@@ -8,6 +8,8 @@ Jump to: [No sound from any speaker](#no-sound-from-any-speaker) · [No sound fr
 
 Work through these in order. Each one is a separate possible cause.
 
+**Quickest check:** choose **Can't hear audio?** above the speaker list. It names what PlayNice can establish (VB-CABLE missing or not available, a speaker not connected, muted in Windows or failed to start, audio not started, no sound detected from CABLE Input recently) and offers the matching button. It never changes your Windows settings. The steps below are the long version.
+
 1. **Is PlayNice playing?** The header should say **Playing** and the button should say **Stop audio**. If it says **Stopped**, choose **Start audio**. If an error banner is shown, read it; it says what failed.
 2. **Is the controller running?** A banner saying the controller is not running means nothing can start. Choose **Start controller**.
 3. **Is the program really sending its sound to the cable?** Open **Settings > System > Sound > Volume mixer** and check that the program's **Output** is **CABLE Input (VB-Audio Virtual Cable)**. If you routed nothing to the cable, PlayNice has nothing to play. (If you left the program on the Windows default device, you hear it on that device and PlayNice is not involved.)
@@ -17,10 +19,13 @@ Work through these in order. Each one is a separate possible cause.
 7. **Are the speakers on, connected and turned up?** Each speaker's own volume and mute (on its row and in Windows Sound settings) apply. A speaker listed as unavailable cannot play.
 8. **Are the speakers switched on in the setup?** Each row has a switch. A speaker switched off in the setup is silent.
 9. **Did you save and restart after changing the setup?** A speaker added to a playing setup starts only after **Restart to apply changes**.
+10. **Does the speaker itself work?** Choose **Test** on its row (stop audio first if the playing setup uses it). If you hear the test sound there but not your program, the problem is the routing in Volume mixer; if you hear nothing from **Test** either, the speaker, its Windows volume or its connection is the cause.
 
 If it still fails, [export a diagnostic report](diagnostic-report.md) and [report it](reporting-a-bug.md).
 
 ## No sound from one speaker
+
+**Try Test first.** Choose **Test** on that speaker's row. "Test sound sent to ... Did you hear it?" means Windows was handed the sound. If you did not hear it, continue below. If **Test** says the speaker is muted or at zero in Windows, unmute it or raise it in Windows yourself; PlayNice will not do it. If **Test** says it could not open the speaker, check that nothing else has taken the device exclusively (some apps do) and try again.
 
 1. **Is it listed and available?** On its row, the status should say **Available** or **Playing**. If it says unavailable or not available now, switch it on or reconnect it, then restart playback.
 2. **Was it on when playback started?** A speaker that was off at the start does not join automatically. Switch it on, then choose **Restart audio** or **Restart to apply changes**.

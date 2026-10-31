@@ -24,6 +24,8 @@ The file is named like `PlayNice-Diagnostics-20261030-140509.zip`. The date and 
 
 Devices appear as `source-1`, `speaker-1`, `speaker-2`. These names only mean something inside one report.
 
+**Audio path summary.** Since 0.1.0-beta.2 the report also has a short block of fixed words and counts: whether VB-CABLE looks absent, usable, inactive, unhealthy or waiting for a restart; whether sound from the cable is idle, present or was lost; how many speakers are set up, playing and failed; and how the last **Test** on a speaker ended (completed, failed, cancelled, timed out and so on, with Windows' error code when there was one). It does not say whether you heard the test, because PlayNice cannot know that, and it never includes a speaker's name.
+
 ## What it is designed to leave out
 
 Saved setups and settings, setup names, device names and IDs, Bluetooth addresses, serial numbers, your user name, computer name and folders, audio recordings, registry contents, memory dumps, and the raw log files.

@@ -56,6 +56,14 @@ Only if you choose it. After you confirm the uninstall, Setup asks **Also uninst
 
 The installer is not yet signed, so Windows may warn about it or block it. Only use an installer from this repository's Releases page, check its checksum, and do not turn off Defender or SmartScreen or add exclusions to run it. See [Installation](installation.md#windows-warnings), and [If Smart App Control blocks PlayNice](installation.md#if-smart-app-control-blocks-playnice) if Smart App Control stops it.
 
+## How do I check one speaker?
+
+Choose **Test** on its row. PlayNice plays a short, soft sound on that speaker only and then says *Test sound sent to ... Did you hear it?* PlayNice can tell that Windows accepted the sound; it cannot know whether you heard it. **Test** works without VB-CABLE carrying anything, does not change the Windows volume or mute, and is off while the playing setup uses that speaker.
+
+## Why do I hear nothing even though PlayNice is playing?
+
+Usually because no program is sending its sound to **CABLE Input**. PlayNice only plays what arrives there. Choose **Open Windows Volume Mixer** on the card under the source, set the program's output to **CABLE Input**, and start something playing. **Can't hear audio?** lists the other causes it can detect. PlayNice never changes the Windows default device or a program's output by itself.
+
 ## Does PlayNice send my information anywhere?
 
 PlayNice does not upload your setups, devices or diagnostic reports. A [diagnostic report](diagnostic-report.md) is saved on your computer only when you ask for one, and you decide whether to share it.
