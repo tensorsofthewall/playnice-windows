@@ -2,7 +2,7 @@
 
 PlayNice runs on 64-bit Windows 11. It installs no driver and needs no administrator rights for the recommended install. For the whole path from download to sound, see [Getting started](getting-started.md).
 
-> **Status:** the first beta has not been published yet. Until it is, the [Releases page](https://github.com/tensorsofthewall/playnice-windows/releases) has no installer and there is nothing to install. The names and steps below describe the beta installer. The maintainer reports that one installed copy passed native sign-in, tray and Explorer-recovery checks (see [Start at sign-in](settings-guide.md#start-at-sign-in)); the exact installer file of that copy was not recorded. Installation has not been tested on a clean computer or with more than one user account.
+> **Status:** the first public beta, [v0.1.0-beta.1](https://github.com/tensorsofthewall/playnice-windows/releases/tag/v0.1.0-beta.1), is published on the [Releases page](https://github.com/tensorsofthewall/playnice-windows/releases) as a Pre-release. The steps below describe its installer. The maintainer reports that one installed copy passed native sign-in, tray and Explorer-recovery checks (see [Start at sign-in](settings-guide.md#start-at-sign-in)); the exact installer file of that copy was not recorded. Installation has not been tested on a clean computer or with more than one user account.
 
 ## Before you start
 

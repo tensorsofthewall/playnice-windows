@@ -23,7 +23,7 @@ What you need: 64-bit Windows 11, a wired speaker (or headphones, or a monitor w
 
 1. Open the [Releases page](https://github.com/tensorsofthewall/playnice-windows/releases) of this repository.
 2. Download the installer, `PlayNice-<version>-Setup-x64.exe`, from the newest entry. While PlayNice is in beta, releases are marked **Pre-release**; that is expected.
-   - If the list has no installer yet, no beta has been published and there is nothing to install. Check again later.
+   - The first beta is [v0.1.0-beta.1](https://github.com/tensorsofthewall/playnice-windows/releases/tag/v0.1.0-beta.1). Its installer is listed under **Assets**, next to `SHA256SUMS.txt`.
 3. Check the file as described in [Installation](installation.md#download), then run it and choose **Install for me only**.
 4. Leave **Start PlayNice** ticked on the last page, or open PlayNice later from the Start menu.
 

@@ -6,8 +6,8 @@
 
 <p align="center"><strong>Play audio through multiple speakers at once on Windows 11.</strong></p>
 
-> **Status:** PlayNice is in early testing. The first beta has not been published yet, so the
-> [Releases page](https://github.com/tensorsofthewall/playnice-windows/releases) has no download until it is.
+> **Status:** PlayNice is in early testing. The first public beta, [v0.1.0-beta.1](https://github.com/tensorsofthewall/playnice-windows/releases/tag/v0.1.0-beta.1),
+> is available on the [Releases page](https://github.com/tensorsofthewall/playnice-windows/releases) (marked Pre-release). The installer is not signed.
 
 PlayNice sends the sound of your computer, or of one program, to several audio outputs at the same time: for
 example a monitor, a USB headset and a Bluetooth speaker.
@@ -39,7 +39,7 @@ example a monitor, a USB headset and a Bluetooth speaker.
 
 | | |
 | --- | --- |
-| **Download** | [Releases](https://github.com/tensorsofthewall/playnice-windows/releases) (no beta is published yet) |
+| **Download** | [v0.1.0-beta.1](https://github.com/tensorsofthewall/playnice-windows/releases/tag/v0.1.0-beta.1) (all [Releases](https://github.com/tensorsofthewall/playnice-windows/releases); betas are marked Pre-release) |
 | **Install** | [Installation](docs/installation.md) |
 | **First use** | [Getting started](docs/getting-started.md), a walkthrough for beginners |
 | **Every setting** | [Settings guide](docs/settings-guide.md) |
