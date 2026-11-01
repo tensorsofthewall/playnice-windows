@@ -22,7 +22,7 @@ What you need: 64-bit Windows 11, a wired speaker (or headphones, or a monitor w
 ## 1. Install PlayNice
 
 1. Open the [Releases page](https://github.com/tensorsofthewall/playnice-windows/releases) of this repository.
-2. Download the installer, `PlayNice-<version>-Setup-x64.exe`, from the newest entry ([v0.1.0-beta.2](https://github.com/tensorsofthewall/playnice-windows/releases/tag/v0.1.0-beta.2)). Releases are marked **Pre-release** while PlayNice is in beta; that is expected. The earlier [v0.1.0-beta.1](https://github.com/tensorsofthewall/playnice-windows/releases/tag/v0.1.0-beta.1) stays available but cannot install VB-CABLE for you.
+2. Download the installer, `PlayNice-<version>-Setup-x64.exe`, from the newest entry. Releases are marked **Pre-release** while PlayNice is in beta; that is expected. Earlier test versions stay available, but the first one cannot install VB-CABLE for you.
 3. Check the file as described in [Installation](installation.md#download), then run it. Keep **Install for all users (recommended)** (it goes into Program Files and Windows asks for permission, as for most programs) or choose **Install for me only**, which needs no administrator rights. You can choose another folder on the next page. See [Installation](installation.md#install) for the details.
 4. Leave **Start PlayNice** ticked on the last page, or open PlayNice later from the Start menu.
 
@@ -45,7 +45,7 @@ About VB-CABLE: it is third-party **donationware** made by VB-Audio Software (<h
 
 If you are told that permission was not given, or that the setup was closed, nothing was changed on your computer. Choose **Try again** or **Install manually**.
 
-> *This installation path is new in v0.1.0-beta.2. It has been checked with automated tests, but the maintainer's test of a real installation and restart on a clean Windows computer is still being done, so treat it as untested on your own computer. No screenshot of VB-Audio's window is shown here.*
+> *Installing VB-CABLE from PlayNice has been checked with automated tests. It has not been tested on a clean Windows computer, so treat it as untested on your own computer. No screenshot of VB-Audio's window is shown here.*
 
 ## 4. Restart Windows
 

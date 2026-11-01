@@ -1,6 +1,6 @@
 # Settings guide
 
-This page explains every setting in PlayNice, what it changes, and its default. It describes PlayNice 0.1.0-beta.2. Names in **bold** are the labels you see in the program. For a first walkthrough, start with [Getting started](getting-started.md).
+This page explains every setting in PlayNice, what it changes, and its default. It describes the newest version. Names in **bold** are the labels you see in the program. For a first walkthrough, start with [Getting started](getting-started.md).
 
 Open Settings from the **...** (More actions) menu at the top right of the window, then **Settings…**. Settings opens in its own window and never interrupts audio; closing it changes nothing.
 
@@ -194,7 +194,7 @@ If the tray is not ready, PlayNice waits up to about a minute for it before show
 - Windows can switch startup entries off in **Settings > Apps > Startup**. If PlayNice does not start, check there.
 - Turning the switch off removes both entries and leaves other programs' entries alone.
 - Resuming the last setup needs its speakers to be on and connected at sign-in.
-- This is the sign-in behaviour and is unchanged in beta.2: it resumes the setup you **started** last. Opening PlayNice yourself resumes differently, based on what **Quit PlayNice** and **Stop audio** recorded (see [Opening PlayNice again](#opening-playnice-again)).
+- Starting at sign-in resumes the setup you **started** last. Opening PlayNice yourself resumes differently, based on what **Quit PlayNice** and **Stop audio** recorded (see [Opening PlayNice again](#opening-playnice-again)).
 
 **Test status.** The maintainer reports that one installed copy of PlayNice passed these checks on a real Windows sign-in: the window starts at sign-in, audio resumes, the window stays hidden in the tray, starting PlayNice again shows the existing window, the tray icon comes back after Windows Explorer restarts, and turning **Start PlayNice at sign-in** off works. The exact installer file and build of that copy were not recorded, and no log of the checks is kept with these documents. Not tested: a clean computer, other user accounts or more than one signed-in user, other Windows versions, and how long the tray icon takes to appear. If the window is not where you expect it, see [Troubleshooting](troubleshooting.md#the-window-is-missing-or-hidden-in-the-tray).
 

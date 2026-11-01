@@ -2,7 +2,7 @@
 
 PlayNice runs on 64-bit Windows 11. It installs no driver. For the whole path from download to sound, see [Getting started](getting-started.md).
 
-> **Status:** the newest public beta, [v0.1.0-beta.2](https://github.com/tensorsofthewall/playnice-windows/releases/tag/v0.1.0-beta.2), is on the [Releases page](https://github.com/tensorsofthewall/playnice-windows/releases) as a Pre-release; [v0.1.0-beta.1](https://github.com/tensorsofthewall/playnice-windows/releases/tag/v0.1.0-beta.1) stays available. The steps below describe the newest installer. Installation has not been tested on a clean computer or with several user accounts, and installing and removing VB-CABLE from PlayNice, the choice of installation folder and the optional removal of your data when uninstalling are new in beta.2 and are still being tested by the maintainer.
+> **Status:** PlayNice is in early testing, and its test versions are marked Pre-release on the [Releases page](https://github.com/tensorsofthewall/playnice-windows/releases). The steps below describe the newest installer. Installation has not been tested on a clean computer or with several user accounts. This includes installing and removing VB-CABLE from PlayNice, choosing the installation folder and the optional removal of your data when uninstalling, which have been checked with automated tests only.
 
 ## Before you start
 
