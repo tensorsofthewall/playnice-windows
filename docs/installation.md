@@ -1,13 +1,13 @@
 # Installation
 
-PlayNice runs on 64-bit Windows 11. It installs no driver and needs no administrator rights for the recommended install. For the whole path from download to sound, see [Getting started](getting-started.md).
+PlayNice runs on 64-bit Windows 11. It installs no driver. For the whole path from download to sound, see [Getting started](getting-started.md).
 
-> **Status:** the newest public beta, [v0.1.0-beta.2](https://github.com/tensorsofthewall/playnice-windows/releases/tag/v0.1.0-beta.2), is published on the [Releases page](https://github.com/tensorsofthewall/playnice-windows/releases) as a Pre-release; [v0.1.0-beta.1](https://github.com/tensorsofthewall/playnice-windows/releases/tag/v0.1.0-beta.1) stays available. The steps below describe the newest installer. The maintainer reports that one installed copy passed native sign-in, tray and Explorer-recovery checks (see [Start at sign-in](settings-guide.md#start-at-sign-in)); the exact installer file of that copy was not recorded. Installation has not been tested on a clean computer or with more than one user account. Installing and removing VB-CABLE from PlayNice is new in beta.2 and is being tested separately by the maintainer; it has not been confirmed on a clean computer.
+> **Status:** the newest public beta, [v0.1.0-beta.2](https://github.com/tensorsofthewall/playnice-windows/releases/tag/v0.1.0-beta.2), is on the [Releases page](https://github.com/tensorsofthewall/playnice-windows/releases) as a Pre-release; [v0.1.0-beta.1](https://github.com/tensorsofthewall/playnice-windows/releases/tag/v0.1.0-beta.1) stays available. The steps below describe the newest installer. Installation has not been tested on a clean computer or with several user accounts, and installing and removing VB-CABLE from PlayNice, the choice of installation folder and the optional removal of your data when uninstalling are new in beta.2 and are still being tested by the maintainer.
 
 ## Before you start
 
 - **Microsoft Visual C++ Redistributable 2015-2022 (x64).** Most computers already have it. PlayNice's installer checks for it and warns you if it is missing. If PlayNice reports a missing `VCRUNTIME140` or `MSVCP140` file, install it from Microsoft: <https://aka.ms/vs/17/release/vc_redist.x64.exe>.
-- **VB-CABLE** (a separate product from VB-Audio Software, donationware) is needed to send the sound of Windows or of one program to PlayNice. PlayNice's installer carries VB-Audio's package but does **not** install it. On its first screen PlayNice offers **Install VB-CABLE**; only then does Windows ask for administrator permission, for VB-Audio's installer only. PlayNice itself does not need administrator rights for the recommended install. See [Getting started](getting-started.md#2-install-vb-cable-from-playnice). You can install PlayNice first.
+- **VB-CABLE** (a separate product from VB-Audio Software, donationware) is needed to send the sound of Windows or of one program to PlayNice. PlayNice's installer carries VB-Audio's package but does **not** install it. On its first screen PlayNice offers **Install VB-CABLE**; only then does Windows ask for administrator permission, for VB-Audio's own installer. You can install PlayNice first. See [Getting started](getting-started.md#3-install-vb-cable-from-playnice).
 
 ## Download
 
@@ -15,7 +15,7 @@ Use the [Releases page](https://github.com/tensorsofthewall/playnice-windows/rel
 
 - While PlayNice is in beta its releases are marked **Pre-release**. GitHub's "latest release" link skips pre-releases, so this documentation links to the full list instead.
 - The installer is named `PlayNice-<version>-Setup-x64.exe`, where `<version>` is the release's version (for example `0.1.0-beta.2`).
-- A release's page lists the installer's file name and its SHA-256 checksum.
+- A release has a `SHA256SUMS.txt` file and its page lists the installer's SHA-256 checksum.
 
 To check the file in PowerShell, replace the name with the file you downloaded:
 
@@ -28,15 +28,21 @@ Compare the result with the checksum on the release page. A matching checksum sh
 ## Install
 
 1. Run the installer. It shows a short beta notice first.
-2. Choose **Install for me only** (recommended). No administrator rights are needed.
-   **Install for all users** puts the program in the shared Program Files folder and asks for administrator rights. Every account can then start PlayNice, and each account keeps its own setups and settings.
-3. Leave **Start PlayNice** ticked to open it when Setup finishes, or untick it.
+2. Choose how to install:
+   - **Install for all users (recommended).** The default. PlayNice goes into the standard **Program Files** folder (normally `C:\Program Files\PlayNice`) and Windows asks for administrator permission, as it does for most programs. Every account on the computer can then start PlayNice, and each account keeps its own setups and settings.
+   - **Install for me only.** No administrator rights are needed. PlayNice goes into `%LOCALAPPDATA%\Programs\PlayNice`, and only your account can use it.
+3. On a new installation Setup shows the **destination folder** with a **Browse** button. Keep the suggested folder, or choose another one (a folder with spaces in its name, a non-English name, or one on another drive is fine). Setup refuses a folder that is a drive's root, a Windows or system folder, inside another program's folder, a junction or link, or that already holds other files, and it tells you why.
+4. Leave **Start PlayNice** ticked to open it when Setup finishes, or untick it.
 
-The installer adds a Start menu shortcut, an **Uninstall PlayNice** shortcut and an uninstaller. It does not change your Windows default audio device, does not install a driver itself (VB-CABLE is installed only if you choose **Install VB-CABLE** later), and does not turn on starting at sign-in; that is a setting inside PlayNice.
+**Choosing a folder for all users.** Programs for all users should not be changeable by ordinary accounts, so Setup protects the PlayNice folder: administrators can change it, everyone else can only read and run it. Setup changes the permissions of that one folder only, never of the folder above it, and refuses a location where it cannot make that safe (for example a folder that an ordinary account owns, or a new folder inside a location that ordinary accounts may rearrange). If you want such a location, choose **Program Files**, pick a parent folder that only administrators can change, or install for yourself only.
+
+Your setups, settings and logs are **not** stored in the installation folder. They stay in the `PlayNice` folder under `%LOCALAPPDATA%` of each Windows account (see [Settings guide](settings-guide.md)), whichever way and wherever PlayNice is installed.
+
+The installer adds a Start menu shortcut, an **Uninstall PlayNice** shortcut and an uninstaller. It does not change your Windows default audio device, does not install a driver itself, and does not turn on starting at sign-in; that is a setting inside PlayNice. PlayNice itself always runs as your ordinary account and never asks for administrator rights.
 
 ## Windows warnings
 
-The PlayNice installer is **not yet signed**. Windows has features that judge programs it does not know, and they may warn about the installer or block it. The wording depends on your Windows version and settings, and it can change.
+The PlayNice installer is **not yet signed**. Installing it into Program Files does not change that. Windows has features that judge programs it does not know, and they may warn about the installer or block it. The wording depends on your Windows version and settings, and it can change.
 
 What to do:
 
@@ -60,21 +66,26 @@ If SAC blocks PlayNice, you can wait for a signed release or, if you choose, tur
 
 ## Upgrade
 
-Run the newer installer. PlayNice keeps its identity, so it replaces the installed copy and keeps your setups and settings.
+Run the newer installer. PlayNice keeps its identity, so it replaces the installed copy **in place** and keeps your setups and settings.
 
-- Close the PlayNice window first, including its tray icon (Quit GUI). Setup asks you to if it is open.
+- An existing installation keeps its own way of being installed and its own folder. A copy installed for one account **stays** installed for that account (for example a v0.1.0-beta.1 installed for you only is upgraded in place and is not moved to Program Files), and a custom folder is kept. Setup does not ask again.
+- Close the PlayNice window first, including its tray icon (the tray menu's **Quit PlayNice**). Setup asks you to if it is open.
 - If PlayNice's controller or audio is still running, Setup says so and asks whether to stop it. Continuing **interrupts any sound that is playing**. Choosing not to continue cancels the installation and leaves audio alone.
-- Upgrade the same way you installed. A copy installed for one account and a copy installed for all users are treated as different installations, and Setup stops and tells you to uninstall one first. It never removes either by itself.
+- **Changing between "for me only" and "for all users" is deliberate, not automatic.** A copy installed one way and a copy installed the other way are treated as different installations: Setup stops, explains, and never removes either by itself. Uninstall the old one first (choose **Keep my data** so your setups remain), then run the installer again and choose the other way. The new installation finds your setups again, because they are stored per account, not with the program.
 
 ## Uninstall
 
 Open **Settings > Apps > Installed apps**, find **PlayNice** and choose **Uninstall**, or use **Uninstall PlayNice** in the Start menu (the same uninstaller). Setup asks you to close the PlayNice window first, and asks before it stops audio that is playing.
 
-- Uninstalling shuts down PlayNice's controller and removes PlayNice's sign-in startup entries.
-- Your setups and settings are kept in the `PlayNice` folder under `%LOCALAPPDATA%` so they are still there if you install again. Delete that folder yourself if you want them gone.
-- If VB-CABLE is installed, Setup asks **Also uninstall VB-CABLE?** after you confirm the uninstall. **Keep VB-CABLE** is the default. VB-CABLE is a separate driver that other programs may use; choose **Remove VB-CABLE** only if nothing else needs it. Removing it asks Windows for administrator permission, opens VB-Audio's own setup (choose **Remove Driver** there), and needs a restart. If removal fails or you decline, PlayNice is still uninstalled and VB-CABLE stays. A silent uninstall never removes VB-CABLE.
+- Uninstalling shuts down PlayNice's controller and removes PlayNice's sign-in startup entry.
+- After you confirm the uninstall, Setup asks up to two separate questions, and any combination is possible. **Both default to keeping everything.**
+  - **VB-CABLE** (only if it is installed): **Keep VB-CABLE** or **Remove VB-CABLE**. VB-CABLE is a separate driver that other programs may use; choose **Remove VB-CABLE** only if nothing else needs it. Removing it asks Windows for administrator permission, opens VB-Audio's own setup (choose **Remove Driver** there), and needs a restart. If removal fails or you decline, PlayNice is still uninstalled and VB-CABLE stays.
+  - **Remove your PlayNice data?** **Keep my data** or **Delete my PlayNice data**. Keep it if you may install PlayNice again: your saved setups and settings are then still there. Deleting removes the `PlayNice` folder under `%LOCALAPPDATA%` of **the Windows account you are signed in to**: your saved setups, settings and PlayNice's own logs and diagnostic files. It **cannot be undone** unless you have a backup, and Setup asks you to confirm. It does not touch diagnostic ZIPs you saved elsewhere, other Windows accounts' PlayNice data, or any older Audio Mux data.
+- Data is deleted only after PlayNice itself has been removed, and only if Setup can be sure whose data it is. If it cannot (for example a different administrator approved the permission prompt), your data is **kept** and Setup tells you so. If some of it cannot be deleted (a file in use), Setup says so and where the list is; it never claims more than it did.
+- For an installation for all users, the uninstall removes the program for everyone but deletes data only for the account that ran it. Other accounts keep their setups; each owner can delete their own `%LOCALAPPDATA%\PlayNice` folder (close PlayNice first).
+- A silent uninstall (`/SILENT` or `/VERYSILENT`) asks nothing and keeps both your data and VB-CABLE.
 - If you routed a program to **CABLE Input** in Windows, that routing is not undone. See [Windows audio is silent after I stop PlayNice](troubleshooting.md#windows-audio-is-silent-after-i-stop-playnice).
 
 ## If installation fails
 
-Note what Setup or Windows showed, which installer file you used, and whether you chose **for me only** or **for all users**, then [report the problem](reporting-a-bug.md#startup-and-installer-problems).
+Note what Setup or Windows showed, which installer file you used, whether you chose **for all users** or **for me only**, and the folder you chose, then [report the problem](reporting-a-bug.md#startup-and-installer-problems).

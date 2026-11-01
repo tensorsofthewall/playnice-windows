@@ -2,7 +2,7 @@
 
 Most problems have more than one possible cause, so each section lists checks to go through in order. Stop when the problem is fixed. Names in **bold** are labels in PlayNice or Windows. If you are new to PlayNice, read [Getting started](getting-started.md) first; it explains CABLE Input, CABLE Output and the order of the steps.
 
-Jump to: [No sound from any speaker](#no-sound-from-any-speaker) · [No sound from one speaker](#no-sound-from-one-speaker) · [Program not in Volume mixer](#an-application-is-not-listed-in-the-volume-mixer) · [VB-CABLE not detected](#vb-cable-is-not-detected) · [Wrong cable entry](#the-wrong-vb-cable-entry-is-selected) · [Silent after stopping](#windows-audio-is-silent-after-i-stop-playnice) · [Bluetooth](#a-bluetooth-speaker-is-unavailable) · [Crackling](#dropouts-or-crackling) · [Not aligned](#speakers-are-not-aligned) · [Behind video](#audio-is-delayed-compared-with-the-video) · [Window missing](#the-window-is-missing-or-hidden-in-the-tray) · [Sign-in](#audio-or-the-window-does-not-start-at-sign-in) · [Export failure](#the-diagnostic-report-cannot-be-exported)
+Jump to: [No sound from any speaker](#no-sound-from-any-speaker) · [No sound from one speaker](#no-sound-from-one-speaker) · [Test failed](#the-test-button-failed) · [Controller did not start](#the-controller-did-not-start) · [Did not resume](#playnice-did-not-resume-playing) · [Speaker reconnecting](#a-speaker-keeps-reconnecting-or-recovery-failed) · [Setup folder](#installation-to-another-folder-or-setup-refuses-the-folder) · [Uninstall](#uninstalling-data-or-vb-cable-was-not-removed) · [Program not in Volume mixer](#an-application-is-not-listed-in-the-volume-mixer) · [VB-CABLE not detected](#vb-cable-is-not-detected) · [Wrong cable entry](#the-wrong-vb-cable-entry-is-selected) · [Silent after stopping](#windows-audio-is-silent-after-i-stop-playnice) · [Bluetooth](#a-bluetooth-speaker-is-unavailable) · [Crackling](#dropouts-or-crackling) · [Not aligned](#speakers-are-not-aligned) · [Behind video](#audio-is-delayed-compared-with-the-video) · [Window missing](#the-window-is-missing-or-hidden-in-the-tray) · [Sign-in](#audio-or-the-window-does-not-start-at-sign-in) · [Export failure](#the-diagnostic-report-cannot-be-exported)
 
 ## No sound from any speaker
 
@@ -36,6 +36,45 @@ If it still fails, [export a diagnostic report](diagnostic-report.md) and [repor
 7. **Did Windows switch it off or sleep it?** Check its state in Windows Sound settings. For Bluetooth, see [A Bluetooth speaker is unavailable](#a-bluetooth-speaker-is-unavailable).
 8. If the row names a problem, choose **Choose another device…** only if you want to replace it. PlayNice never picks a replacement for you.
 
+## The Test button failed
+
+**Test** plays a short sound on one speaker and then says what it can tell. Choose **Details** on the note for the exact reason and the Windows error code (include it in a [report](reporting-a-bug.md)).
+
+- *Muted or at zero in Windows*: unmute it or raise it in Windows; PlayNice never changes it for you.
+- *Could not open the speaker*: another program may be using it exclusively, or the device was switched off or disconnected since the list was read. Close the other program, reconnect the device and try again.
+- *The test helper ended without a result*, or any other failure: try again once; if it repeats, [report it](reporting-a-bug.md) with the details.
+- The button is off while the playing setup uses that speaker (choose **Stop audio** first), while another test plays, and for a speaker that is not connected.
+- A successful test only means Windows accepted the sound. If you did not hear it, check the speaker's own volume and connection.
+
+## The controller did not start
+
+The controller is PlayNice's background program. Opening PlayNice starts it by itself. If the window still says **The PlayNice controller is not running** (or *PlayNice couldn't start its controller*), choose **Start controller** once; PlayNice never retries in a loop. If that fails:
+
+1. **Is the Microsoft Visual C++ Redistributable installed?** A missing `VCRUNTIME140` or `MSVCP140` stops the programs from starting; install it from <https://aka.ms/vs/17/release/vc_redist.x64.exe>.
+2. **Did you deliberately shut it down?** After **Shut down controller…** PlayNice does not start it by itself; **Start controller** does.
+3. **Is security software or Smart App Control blocking `playnice-control.exe`?** See [Windows warnings](installation.md#windows-warnings). Do not turn protection off.
+4. **Is an older copy still running?** Quit PlayNice fully, check Task Manager for `playnice-control.exe` and `playnice-bridge.exe`, then try again.
+5. [Report it](reporting-a-bug.md#if-playnice-will-not-start) with a diagnostic report if the window can still open.
+
+## PlayNice did not resume playing
+
+PlayNice starts the sound again on its own only after **Quit PlayNice** while sound was playing. It does not resume after **Stop audio**, after **Shut down controller…**, after a crash, or when the computer was shut down without quitting PlayNice. This is on purpose.
+
+1. **Did you stop it first?** If you chose **Stop audio** before quitting, nothing resumes. Choose **Start audio**.
+2. **Was a speaker missing?** PlayNice waits a while for a missing speaker, then says it could not resume. It never uses a different speaker in its place. Switch the speaker on and choose **Start audio**.
+3. **Does it need your confirmation?** A setup saved with old volume settings asks you to confirm instead of starting by itself. Start it once and confirm.
+4. **Did the controller start at all?** See [The controller did not start](#the-controller-did-not-start).
+5. **Resume at sign-in is separate.** It follows the setup you *started* last and needs **Start PlayNice at sign-in** on; see [Audio or the window does not start at sign-in](#audio-or-the-window-does-not-start-at-sign-in).
+
+## A speaker keeps reconnecting, or recovery failed
+
+If one speaker goes away while a setup plays (Bluetooth switched off or out of range, a USB device unplugged, a device disabled), the other speakers keep playing. That speaker shows as *Reconnecting…* while PlayNice tries again for about two minutes, and it rejoins by itself when Windows lists it again. It does not play the sound from the time it was away, and it is never replaced by another device.
+
+1. **Bring the speaker back**: switch it on, move it closer, reconnect it in **Settings > Bluetooth & devices**.
+2. **After about two minutes** PlayNice stops trying and says *Couldn't reconnect*. Choose **Try again**, or restart the setup.
+3. **Re-check the delay.** A Bluetooth speaker can come back with a different latency; see [Speakers are not aligned](#speakers-are-not-aligned).
+4. If it reconnects and fails again and again, try the speaker alone in Windows, then [report it](reporting-a-bug.md) with a diagnostic report. Automatic recovery has been checked with automated tests and fake devices, not with every real speaker.
+
 ## An application is not listed in the Volume mixer
 
 PlayNice does not control the Volume mixer; Windows does. A program may be missing from it for several reasons:
@@ -53,7 +92,7 @@ If you cannot route one program, you can instead set **CABLE Input** as the Wind
 
 PlayNice detects a VB-CABLE playback device that Windows lists and that is switched on. Check, in order:
 
-1. **Is it installed?** In **Settings > System > Sound**, look for **CABLE Input (VB-Audio Virtual Cable)** under **Output**. If it is missing, choose **Install VB-CABLE** on PlayNice's first screen or in the **Audio source** card ([Getting started](getting-started.md#2-install-vb-cable-from-playnice)), or install it yourself from <https://vb-audio.com/Cable/>. If PlayNice says permission was not given or the setup was closed, nothing was changed: choose **Try again**. If it says VB-CABLE needs attention, it is installed but not working; follow the steps it shows. PlayNice does not start VB-Audio's installer again while VB-CABLE is already installed, because that installer would offer to remove it.
+1. **Is it installed?** In **Settings > System > Sound**, look for **CABLE Input (VB-Audio Virtual Cable)** under **Output**. If it is missing, choose **Install VB-CABLE** on PlayNice's first screen or in the **Audio source** card ([Getting started](getting-started.md#3-install-vb-cable-from-playnice)), or install it yourself from <https://vb-audio.com/Cable/>. If PlayNice says permission was not given or the setup was closed, nothing was changed: choose **Try again**. If it says VB-CABLE needs attention, it is installed but not working; follow the steps it shows. PlayNice does not start VB-Audio's installer again while VB-CABLE is already installed, because that installer would offer to remove it.
 2. **Did you restart Windows after installing?** VB-CABLE needs a restart. PlayNice says **Restart Windows to finish setting up the audio driver** and never restarts Windows by itself. Restart, open PlayNice, then choose **Check again**.
 3. **Is it disabled?** In **Settings > System > Sound > More sound settings**, open the **Playback** tab, right-click an empty area, and tick **Show Disabled Devices**. If **CABLE Input** is disabled, right-click it and choose **Enable**.
 4. **Did you install the right one?** PlayNice starts the 64-bit setup program from VB-Audio's package. If you install by hand, use the 64-bit one (its name ends in `_x64`) as administrator.
@@ -82,7 +121,7 @@ When you stop PlayNice, sound that a program is still sending to **CABLE Input**
 2. **Did you make CABLE Input the Windows default?** In **Settings > System > Sound**, under **Output**, choose a real speaker as the default. PlayNice never changes the default device, so this was a choice made in Windows.
 3. **Restart the program** if it still does not move. Some programs only pick up the new device when restarted or when playback is paused and resumed.
 4. **Is Windows muted, or the speaker off?** Check the master volume in the taskbar and the speaker itself.
-5. **Closing the PlayNice window does not stop audio.** If you want audio stopped, choose **Stop audio**. If you want the whole program gone, use **Settings…** then **Shut down controller…**.
+5. **Hiding the PlayNice window to the tray does not stop audio.** If you want audio stopped, choose **Stop audio**. If you want everything closed, choose **Quit PlayNice** (see [Quit, Stop and the tray](settings-guide.md#quit-stop-and-the-tray)).
 
 PlayNice does not change Windows routing when it stops. Stopping it does not undo the routing you set in Windows.
 
@@ -92,7 +131,7 @@ Several things can make a Bluetooth speaker unavailable, and PlayNice can only r
 
 1. **Is it on and connected?** In **Settings > Bluetooth & devices**, the speaker should say **Connected**. If it says **Paired** only, connect it.
 2. **Does Windows list it as a playback device?** In **Settings > System > Sound**, it should appear under **Output**. If it appears under a different, hands-free-style name, or twice, choose the entry meant for music.
-3. **Did it go to sleep or move out of range?** Many speakers disconnect after a period of silence. Wake it, reconnect it, and use the refresh button in **Add a speaker** (or choose **Check again** or restart playback).
+3. **Did it go to sleep or move out of range?** Many speakers disconnect after a period of silence. Wake it or reconnect it. A speaker of a playing setup that goes away is retried and rejoins by itself (see [A speaker keeps reconnecting, or recovery failed](#a-speaker-keeps-reconnecting-or-recovery-failed)); otherwise use the refresh button in **Add a speaker** (or choose **Check again** or restart playback).
 4. **Is another device connected to it?** Some speakers allow only one connection.
 5. **Was it off when playback started?** Restart playback after it is connected.
 6. **Try removing and pairing again** in Windows if it will not connect at all.
@@ -117,11 +156,11 @@ Crackling has many possible causes. Try one change at a time and listen:
 
 Speakers play at slightly different times, which can sound like an echo or a smear. PlayNice does not promise that speakers are in step.
 
-1. **Is the offset constant?** If it is the same all session, it is a start-up offset. Use the **Delay** on the **earlier** speaker (usually the wired one) until they line up. Use **Compare timing**. Adjust by ear. Save, then **Restart to apply changes**.
+1. **Is the offset constant?** If it is the same all session, it is a start-up offset. Use the **Delay** on the **earlier** speaker (usually the wired one) until they line up. Use **Compare timing**. Adjust by ear, then choose **Save**: the new delay is applied to the playing audio without a restart, as a short cross-fade that can be briefly audible. If PlayNice says *Saved, but not applied to running audio*, choose **Retry**.
 2. **Does the offset grow over time?** That is clock drift. Turn on **Drift correction** (see [Settings guide](settings-guide.md#drift-correction)). A device that cannot be adjusted will not start with it on.
 3. **Did the offset change after a reconnect or restart?** Bluetooth delay can differ each time it connects. Re-adjust.
 4. **Check the channels.** **Swap sides** or **Left only** on one speaker can sound misaligned.
-5. **Check the delay is applied.** Rows show **Delay: X ms now, Y ms after a restart** when a saved delay is not yet playing. Restart playback.
+5. **Check the delay is applied.** While a saved delay is not yet playing, the row shows the delay that is playing now next to the one that is set. If a Save could not apply it, use **Retry** (or restart playback).
 6. **Different kinds of speakers** (monitor, USB, Bluetooth) have different delays. A delay of up to 500 ms is available.
 
 ## Audio is delayed compared with the video
@@ -181,6 +220,19 @@ Check:
 5. **The window does not open at all?** Then the report cannot be made; describe the problem in an issue. See [Reporting a problem](reporting-a-bug.md#if-playnice-will-not-start).
 
 The report works while audio plays, and also while the controller is not running (it then says the controller did not answer).
+
+## Installation to another folder, or Setup refuses the folder
+
+Setup suggests `C:\Program Files\PlayNice` for all users and `%LOCALAPPDATA%\Programs\PlayNice` for you only, and lets you choose another folder. It refuses, with a reason, a drive's root, a Windows or system folder, a folder inside another program's folder, a junction or link, and a folder that already holds other files. For an installation **for all users** it also refuses a folder that an ordinary account could replace (for example a new folder in a place every account may rearrange), because every account would run the program from it. Choose the suggested folder, a folder under a parent that only administrators can change, or **Install for me only**. PlayNice's setups and settings are never stored in the installation folder. An existing installation upgrades in place, in its own folder and for its own accounts, and Setup never moves it between "all users" and "me only"; if the other kind is present Setup stops and explains (see [Upgrade](installation.md#upgrade)).
+
+## Uninstalling: data or VB-CABLE was not removed
+
+The uninstaller asks two separate questions, **Keep or Remove VB-CABLE** and **Keep my data or Delete my PlayNice data**; both default to keeping. A silent uninstall keeps both.
+
+- **Your data is still there after choosing Delete.** Setup deletes data only for the Windows account that ran the uninstaller, only after PlayNice is removed, and only when it can be sure whose data it is. If it could not (for example a different administrator approved the permission prompt) it keeps your data and says so. Close PlayNice, then delete the `PlayNice` folder under `%LOCALAPPDATA%` (type `%LOCALAPPDATA%` in the Run box) yourself, while signed in to that account. Other accounts keep their own folders; each owner can delete theirs.
+- **"Some of your data could not be deleted."** A file was in use. Setup saved a list as `PlayNice-uninstall-leftovers.txt` in your Temp folder (type `%TEMP%` in the Run box). Close programs that use the files and delete the folder yourself.
+- **VB-CABLE is still installed.** Removal needs administrator permission and VB-Audio's own window (choose **Remove Driver**) and a restart. If you declined or closed it, PlayNice was still uninstalled and VB-CABLE stays; remove it with VB-Audio's own instructions (<https://vb-audio.com/Cable/>) when nothing else uses it.
+- PlayNice's own diagnostic ZIPs that you saved elsewhere, and any older Audio Mux data folder, are never deleted by the uninstaller.
 
 ## Windows warns about the installer
 

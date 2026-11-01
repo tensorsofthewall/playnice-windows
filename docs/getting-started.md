@@ -13,181 +13,128 @@ Browser  ->  CABLE Input  ->  PlayNice  ->  wired speaker
 (Windows plays here)         (picks the sound up)  ->  Bluetooth speaker
 ```
 
-- **VB-CABLE** is a virtual audio device made by a different company (VB-Audio Software) and is donationware. It is not part of PlayNice, and VB-Audio's own terms apply to it. PlayNice can start VB-Audio's installer for you (Step 2). It adds two entries to Windows: **CABLE Input** (an *output*, where programs play their sound) and **CABLE Output** (an *input*, which PlayNice does not use).
-- Sound sent to CABLE Input is **not heard** by itself. You hear it only while PlayNice is playing it on your real speakers. That is why this guide has you get PlayNice ready *before* you send a program's sound to the cable.
-- PlayNice never changes your Windows default playback device, and never changes which device a program uses. You make that choice yourself, in Step 9.
+- **VB-CABLE** is a virtual audio device made by a different company (VB-Audio Software) and is donationware. It is not part of PlayNice, and VB-Audio's own terms apply to it. PlayNice can start VB-Audio's installer for you (Step 3). It adds two entries to Windows: **CABLE Input** (an *output*, where programs play their sound) and **CABLE Output** (an *input*, which PlayNice does not use). A simple way to remember it: **sound goes into CABLE Input**.
+- Sound sent to CABLE Input is **not heard** by itself. You hear it only while PlayNice is playing it on your real speakers. That is why this guide has you start PlayNice *before* you send a program's sound to the cable.
+- PlayNice never changes your Windows default playback device, and never changes which device a program uses. You make that choice yourself, in Step 8, in the Windows Volume Mixer.
 
 What you need: 64-bit Windows 11, a wired speaker (or headphones, or a monitor with speakers) and a Bluetooth speaker.
 
-## 1. Download and install PlayNice
+## 1. Install PlayNice
 
 1. Open the [Releases page](https://github.com/tensorsofthewall/playnice-windows/releases) of this repository.
-2. Download the installer, `PlayNice-<version>-Setup-x64.exe`, from the newest entry. While PlayNice is in beta, releases are marked **Pre-release**; that is expected.
-   - The newest beta is [v0.1.0-beta.2](https://github.com/tensorsofthewall/playnice-windows/releases/tag/v0.1.0-beta.2); the earlier [v0.1.0-beta.1](https://github.com/tensorsofthewall/playnice-windows/releases/tag/v0.1.0-beta.1) stays available but cannot install VB-CABLE for you. Each installer is listed under **Assets**, next to `SHA256SUMS.txt`.
-3. Check the file as described in [Installation](installation.md#download), then run it and choose **Install for me only**.
+2. Download the installer, `PlayNice-<version>-Setup-x64.exe`, from the newest entry ([v0.1.0-beta.2](https://github.com/tensorsofthewall/playnice-windows/releases/tag/v0.1.0-beta.2)). Releases are marked **Pre-release** while PlayNice is in beta; that is expected. The earlier [v0.1.0-beta.1](https://github.com/tensorsofthewall/playnice-windows/releases/tag/v0.1.0-beta.1) stays available but cannot install VB-CABLE for you.
+3. Check the file as described in [Installation](installation.md#download), then run it. Keep **Install for all users (recommended)** (it goes into Program Files and Windows asks for permission, as for most programs) or choose **Install for me only**, which needs no administrator rights. You can choose another folder on the next page. See [Installation](installation.md#install) for the details.
 4. Leave **Start PlayNice** ticked on the last page, or open PlayNice later from the Start menu.
 
 If Windows shows a warning about the installer, read [Windows warnings](installation.md#windows-warnings) first, including the options if Smart App Control blocks it. Do not turn off Defender or SmartScreen to get past it.
 
-The first time PlayNice opens it may say **The PlayNice controller is not running**. The controller is a small background program that holds your setups and runs the audio. Choose **Start controller**. You can leave PlayNice open on its first screen while you do Steps 2 to 4.
+## 2. Open PlayNice
 
-## 2. Install VB-CABLE from PlayNice
+PlayNice starts its own background program, the **controller**, when you open it. The controller holds your setups and runs the audio. If it cannot start, the window says **The PlayNice controller is not running** and offers **Start controller**.
+
+## 3. Install VB-CABLE from PlayNice
 
 If PlayNice's first screen already says **Audio source ready**, or Windows already lists **CABLE Input**, skip to Step 5.
 
-1. In PlayNice, the **Audio source** card says **Set up your audio source** when VB-CABLE is missing.
-2. Choose **Install VB-CABLE**. (If you would rather do it yourself, choose **Install manually** and follow Step 4.)
-3. Windows asks for permission to run VB-Audio's setup program. Only that program gets administrator rights; PlayNice itself keeps running as you.
-4. VB-Audio's setup window opens. Choose **Install Driver** there and accept its prompts. Windows may ask whether to trust software from VB-Audio. Read the prompt; this installs a driver, and doing so is your decision.
-5. When VB-Audio's setup closes, PlayNice looks at what Windows now has and tells you the result. It does not take the setup's word for it.
+1. The **Audio source** card says **Set up your audio source** when VB-CABLE is missing. Choose **Install VB-CABLE**. (To do it yourself, choose **Install manually** and see the alternative at the end of Step 4.)
+2. Windows asks for permission to run VB-Audio's setup program. Only that program gets administrator rights; PlayNice itself keeps running as you.
+3. VB-Audio's setup window opens. Choose **Install Driver** there and accept its prompts. Windows may ask whether to trust software from VB-Audio. Read the prompt; this installs a driver, and doing so is your decision.
+4. When VB-Audio's setup closes, PlayNice looks at what Windows now has and tells you the result. It does not take the setup's word for it.
 
-About VB-CABLE: it is third-party **donationware** made by VB-Audio Software (<https://www.vb-cable.com>). It is independent of PlayNice and VB-Audio's own terms apply to it. If you find it useful, you can support VB-Audio directly on their [donation and licensing page](https://vb-audio.com/Services/licensing.htm). The PlayNice installer carries VB-Audio's package so no download is needed, and PlayNice starts it only when you choose **Install VB-CABLE**. VB-Audio's driver is signed by VB-Audio and Microsoft; that is separate from PlayNice's own installer, which is currently **not** signed.
+About VB-CABLE: it is third-party **donationware** made by VB-Audio Software (<https://www.vb-cable.com>). It is independent of PlayNice and VB-Audio's own terms apply to it. If you find it useful, you can support VB-Audio on their [donation and licensing page](https://vb-audio.com/Services/licensing.htm). The PlayNice installer carries VB-Audio's package so no download is needed, and PlayNice starts it only when you choose **Install VB-CABLE**. VB-Audio's driver is signed by VB-Audio and Microsoft; that is separate from PlayNice's own installer, which is currently **not** signed.
 
 If you are told that permission was not given, or that the setup was closed, nothing was changed on your computer. Choose **Try again** or **Install manually**.
 
 > *This installation path is new in v0.1.0-beta.2. It has been checked with automated tests, but the maintainer's test of a real installation and restart on a clean Windows computer is still being done, so treat it as untested on your own computer. No screenshot of VB-Audio's window is shown here.*
 
-## 3. Restart Windows
+## 4. Restart Windows
 
 VB-CABLE needs Windows to restart before it works. PlayNice then says **VB-CABLE installed** and **Restart Windows to finish setting up the audio driver.**
 
-- Choose **Restart now** (Windows asks your other programs to save first), or **Restart later**.
+- Choose **Restart now** (Windows asks your other programs to save first), or **Restart later**. PlayNice never restarts Windows by itself.
 - Until Windows has restarted, you can keep naming your setup, but audio cannot start.
-- PlayNice never restarts Windows by itself. If you choose **Restart now**, the setup name you typed is remembered.
+- After the restart, open PlayNice again. If it still says **VB-CABLE installed** with a restart message, choose **Check again**.
 
-After the restart, open PlayNice again. If it still says **VB-CABLE installed** with a restart message, choose **Check again**.
+**Alternative: install VB-CABLE yourself.** Only if the steps above failed or you chose **Install manually**: open <https://vb-audio.com/Cable/> (use this address only), download the driver pack ZIP, extract it (Windows cannot run the installer from inside a ZIP), right-click the **64-bit** setup program (its name ends in `_x64`), choose **Run as administrator**, choose **Install Driver**, and restart Windows when asked. If it fails, follow VB-Audio's instructions or contact VB-Audio; PlayNice cannot repair their installer.
 
-## 4. Or install VB-CABLE yourself
+## 5. Check that Windows lists the cable
 
-You only need this if you chose **Install manually**, or the steps above failed.
-
-1. Open <https://vb-audio.com/Cable/> and use this address only. Download the VB-CABLE driver pack (a ZIP file) and read VB-Audio's page for its licence and terms.
-2. Right-click the ZIP, choose **Extract All…**, then **Extract**. Windows cannot run the installer from inside a ZIP.
-3. In the extracted folder, right-click the **64-bit** setup program (its name ends in `_x64`) and choose **Run as administrator**. Do not use the 32-bit one.
-4. Choose **Install Driver** and **restart Windows** when asked.
-
-If installing fails, follow VB-Audio's instructions or contact VB-Audio; PlayNice cannot repair their installer.
-
-## 5. Check that Windows now lists the cable
-
-After the restart:
-
-1. Open **Settings > System > Sound**.
-2. Under **Output**, look for **CABLE Input (VB-Audio Virtual Cable)**.
-3. Under **Input**, look for **CABLE Output (VB-Audio Virtual Cable)**.
+After the restart, open **Settings > System > Sound**. Under **Output** you should see **CABLE Input (VB-Audio Virtual Cable)**, and under **Input** **CABLE Output (VB-Audio Virtual Cable)**. You may also see an extra entry such as *CABLE In 16ch*; use **CABLE Input** unless PlayNice tells you otherwise.
 
 | Name | Kind | What it is for |
 | --- | --- | --- |
 | **CABLE Input** | Output (playback) | Where a program plays its sound. This is the one you point programs at, and the one PlayNice listens to. |
 | **CABLE Output** | Input (recording) | The other end of the same cable. You do not use it with PlayNice. |
 
-A simple way to remember it: **sound goes into CABLE Input**. You may also see an extra entry such as *CABLE In 16ch*; use **CABLE Input** unless PlayNice tells you otherwise.
-
 Leave your normal speakers as the Windows default. Do **not** make CABLE Input the default device.
 
-> *[Screenshot to be added: the Windows Sound settings page listing CABLE Input under Output and CABLE Output under Input. Windows shows your real device names there, so it has not been captured for this page.]*
+Then connect your speakers: plug in or switch on the wired speaker, and pair the Bluetooth speaker (**Settings > Bluetooth & devices > Add device**) until it says **Connected**. Both should appear under **Output**, not marked "Disabled" or "Disconnected". PlayNice can only use speakers that Windows lists and that are switched on and connected; a Bluetooth speaker that has gone to sleep disappears from the list until it reconnects.
 
-## 6. Connect your speakers and check that Windows lists them
-
-1. Plug in or switch on the wired speaker.
-2. Pair the Bluetooth speaker: **Settings > Bluetooth & devices > Add device**, choose **Bluetooth**, put the speaker in pairing mode, and select it. Make sure it says **Connected**.
-3. Back in **Settings > System > Sound**, check that both appear under **Output**, each marked as ready (not "Disabled" or "Disconnected").
-4. Optionally open a speaker's entry and use its **Test** button to hear it once. Turn the volume down first.
-
-PlayNice can only use speakers that Windows lists and that are switched on and connected. A Bluetooth speaker that has gone to sleep disappears from the list until it reconnects.
-
-## 7. Create your first setup in PlayNice
+## 6. Create the first setup, test the speaker and save
 
 A **setup** is a saved list of speakers that play together. You can have several, for example "Living room" and "Desk only".
 
-1. Open PlayNice. If it says the controller is not running, choose **Start controller**.
-2. The first screen is **Set up your speakers**. The **Audio source** card should say **Audio source ready** and **Ready: VB-CABLE "CABLE Input (VB-Audio Virtual Cable)"**.
-   - If it says **Set up your audio source**, install VB-CABLE (Steps 2 to 5) and choose **Check again** afterwards. You can still carry on and add speakers, but audio will not start until the cable is found.
-3. Under **Name your setup**, type a name, for example `Living room`, and choose **Continue to speakers**.
-
-Nothing is saved yet. PlayNice saves the setup in Step 8.
+1. On PlayNice's first screen, check that the **Audio source** card says **Audio source ready** and **Ready: VB-CABLE "CABLE Input (VB-Audio Virtual Cable)"**. If it says **Set up your audio source**, install VB-CABLE (Steps 3 to 5) and choose **Check again**; you can still carry on, but audio will not start until the cable is found.
+2. Under **Name your setup**, type a name, for example `Living room`, and choose **Continue to speakers**. Nothing is saved yet.
+3. Choose **Add a speaker**, select your **wired speaker** in the list of playback devices Windows has, and choose **OK**. PlayNice does not accept the cable itself as a speaker. A device listed as *unavailable* needs to be switched on or reconnected; use the refresh button in the list.
+4. **Test it.** Choose **Test** on the speaker's row. PlayNice plays a short, soft sound on that one speaker, so you can check it before anything else. It then says *Test sound sent to ... Did you hear it?*, a note that clears itself after about ten seconds (or with its X). That means **Windows accepted the sound; PlayNice cannot know whether you heard it**. If you heard nothing, see [No sound from one speaker](troubleshooting.md#no-sound-from-one-speaker). **Test** does not need the cable, and it never changes the speaker's Windows volume or mute: if the speaker is muted or at zero in Windows, PlayNice tells you instead. It is switched off while the playing setup uses that speaker.
+5. Choose **Save setup** at the top right. Saving does not start audio.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="../assets/screenshots/first-run-cable-found-dark.png">
   <img src="../assets/screenshots/first-run-cable-found-light.png" alt="PlayNice first screen: the audio source is found and the setup is being named" width="640">
 </picture>
 
-If the cable is not found, the screen instead says **Set up your audio source** and offers **Install VB-CABLE**, **Install manually** and **Check again**:
+If the cable is not found, the first screen instead says **Set up your audio source** and offers **Install VB-CABLE**, **Install manually** and **Check again**:
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="../assets/screenshots/first-run-cable-missing-dark.png">
   <img src="../assets/screenshots/first-run-cable-missing-light.png" alt="PlayNice first screen when VB-CABLE is not found, with the Install VB-CABLE, Install manually and Check again buttons" width="640">
 </picture>
 
-*These screenshots use made-up device names.*
-
-## 8. Add the first speaker and save
-
-1. On the setup page, check the **Audio source** card. It should show the **CABLE Input** entry with **Found**. If you ever need to change it, choose **Change…**, then pick the entry marked **VB-CABLE**.
-2. Choose **Add a speaker**. A list of the playback devices Windows has appears.
-3. Select your **wired speaker** and choose **OK**.
-4. Choose **Save setup** at the top right.
-5. Optional: choose **Test** on the speaker's row. PlayNice plays a short, soft sound on that speaker only, so you can check it before anything else. It says *Test sound sent to ... Did you hear it?* That means Windows was given the sound, not that you heard it; if you heard nothing, see [No sound from one speaker](troubleshooting.md#no-sound-from-one-speaker). **Test** does not need VB-CABLE to carry any sound, and it never changes the speaker's Windows volume or mute: if the speaker is muted or at zero in Windows, PlayNice tells you instead. It is off while the playing setup uses that speaker; choose **Stop audio** first.
-
-PlayNice does not accept the cable itself as a speaker. If a device is listed as *unavailable* or *not available now*, switch it on or reconnect it, then use the refresh button in the list.
-
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="../assets/screenshots/add-speaker-dark.png">
   <img src="../assets/screenshots/add-speaker-light.png" alt="The Add a speaker list showing four made-up playback devices; one is marked Already in this setup" width="360">
 </picture>
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="../assets/screenshots/first-speaker-dark.png">
-  <img src="../assets/screenshots/first-speaker-light.png" alt="A new setup with the cable as source and one speaker added, before saving" width="640">
-</picture>
+*These screenshots use made-up device names.*
 
-Saving does not start audio. Once the setup is saved, PlayNice shows a card called **Send audio to PlayNice**, with the line *Setup saved. Start audio when you're ready.*
+## 7. Start audio
 
-## 9. Start audio, then route one program to the cable
+Order matters: start PlayNice first, so that sound sent to the cable has somewhere to go. Choose **Start audio**. The status becomes **Playing**.
 
-Order matters here: start PlayNice first, so that sound sent to the cable has somewhere to go.
+## 8. Send one program to the cable
 
-1. In PlayNice, choose **Start audio**. The status becomes **Playing**. The card now says *PlayNice is running. Send audio to CABLE Input to hear it through your speakers.* until it hears sound from the cable, and then *Playing on 2 speakers.* (the number of speakers that are playing).
-2. Start something playing in your browser, for example a video. At this moment you may hear it on your normal speakers, because the browser is still using the Windows default device.
-3. In Windows, open **Settings > System > Sound > Volume mixer**. The card's **Open Windows Volume Mixer** button opens it for you (it only opens the page; PlayNice does not change any setting in it). **How does this work?** shows these steps again.
-4. Find your browser in the list. For that browser, set the **Output** (the device it plays to) to **CABLE Input (VB-Audio Virtual Cable)**. If you do not see an output list, open the browser's entry (the small arrow on its row) first.
-   - A program usually appears in the mixer only after it has played sound. Play something, then look again.
-   - Some programs only move to the new device after you pause and resume, or restart them.
-5. The browser's sound should now come from your **wired speaker**, through PlayNice, and no longer from the Windows default device.
+After you save, a card called **Send audio to PlayNice** explains this last step. It says *PlayNice is running. Send audio to CABLE Input to hear it through your speakers.* until it hears sound from the cable, and then *Playing on 2 speakers.* (the number that are playing). The card is meant for newcomers: close it with its X once you know the way, and bring it back from the **...** menu if you want it again.
 
-> *[Screenshot to be added: the Windows Volume mixer with a browser's output set to CABLE Input. Windows shows the program list and devices of the person who captured it, so it has not been captured for this page.]*
+1. Start something playing in your browser, for example a video. You may still hear it on your normal speakers, because the browser is still using the Windows default device.
+2. Open **Settings > System > Sound > Volume mixer**. The card's **Open Windows Volume Mixer** button opens it for you (it only opens the page; PlayNice does not change any setting in it).
+3. Find your browser in the list and set its **Output** (the device it plays to) to **CABLE Input (VB-Audio Virtual Cable)**. A program usually appears in the mixer only after it has played sound, and some only move to the new device after you pause and resume, or restart them.
+4. The browser's sound now comes from your **wired speaker**, through PlayNice, and no longer from the Windows default device.
 
-**Check that it works:** you should hear the browser's sound on the wired speaker only. The Windows default device should be silent for that browser.
+**If you hear nothing:** choose **Can't hear audio?** above the speaker list. PlayNice lists what it can tell: whether VB-CABLE is installed, whether a speaker is missing, muted in Windows or failed, and whether it has heard any sound from the cable recently. Silence alone is not an error: a paused video looks the same. See also [No sound from any speaker](troubleshooting.md#no-sound-from-any-speaker).
 
-**If you hear nothing:** see [No sound from any speaker](troubleshooting.md#no-sound-from-any-speaker). The usual causes are a browser still pointed at another device, or PlayNice not yet playing.
+**Only that one program goes to PlayNice.** Everything else keeps using the Windows default device, so notifications and other programs are heard normally. You can also make **CABLE Input** the Windows default output to send all sound through PlayNice; it is optional, and PlayNice never does it for you. Sound sent to CABLE Input cannot be heard while PlayNice is stopped, so point the program (or the default) back if you stop PlayNice.
 
-You can also make **CABLE Input** the Windows default output. That sends all sound from the computer through PlayNice. It is optional, and PlayNice never does it for you. Sound sent to CABLE Input cannot be heard while PlayNice is stopped, so choose the default device again (or set the program's output back) if you stop PlayNice.
+## 9. Add the Bluetooth speaker
 
-**Can't hear anything?** Choose **Can't hear audio?** above the speaker list. PlayNice lists what it can tell: whether VB-CABLE is installed, whether a speaker is missing, muted in Windows or failed, and whether it has heard any sound from the cable recently. Silence alone is not an error: a paused video looks the same, so that hint only suggests checking the program's output in Volume Mixer.
+Adding or removing a speaker, switching one on or off, or changing the audio source changes the *membership* of the running setup, so it needs a restart of the audio.
 
-**Only that one program goes to PlayNice.** Everything else on the computer keeps using the Windows default device, so you will keep hearing notifications and other programs normally.
-
-## 10. Add the Bluetooth speaker
-
-Adding a speaker to a setup that is playing changes the setup but not the running audio.
-
-1. Choose **Add a speaker**, select the **Bluetooth speaker**, and choose **OK**.
+1. Choose **Add a speaker**, select the **Bluetooth speaker**, and choose **OK**. Use **Test** on it too.
 2. Choose **Save changes**. The header says the changes are saved but not applied.
 3. Choose **Restart to apply changes**. Audio stops for a moment and starts again with both speakers.
-
-Both speakers should now play the browser's sound.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="../assets/screenshots/playing-two-speakers-dark.png">
   <img src="../assets/screenshots/playing-two-speakers-light.png" alt="PlayNice playing a setup on two speakers: the Send audio to PlayNice card on top, and for each speaker a volume slider, a Test button and a switch" width="640">
 </picture>
 
-## 11. Adjust volume and timing
+## 10. Adjust channels and timing, then save and hear it
 
-- **Volume.** Each speaker has a slider and a mute button. They change that device's volume and mute **in Windows**, so the same volume applies outside PlayNice and is not saved with the setup. They work while the setup is playing.
-- **Master (Windows)** on the source card is the Windows volume of the cable itself. It also works while audio is playing.
-- **Timing.** Different speakers take different amounts of time to play a sound, and Bluetooth is usually later than a wired speaker. If you hear an echo, delay the **earlier** speaker (usually the wired one) until the sounds line up. Open a speaker (the arrow on its row) to set its **Delay**, or choose **Compare timing** to see both delays together. You set this by ear; PlayNice does not measure it. Changes apply after you save and restart playback.
-- **Channels.** In the same panel, choose **Stereo**, **Left only**, **Right only**, **Mono** or **Swap sides** for each speaker.
+- **Volume.** Each speaker has a slider and a mute button. They change that device's volume and mute **in Windows**, so the same volume applies outside PlayNice and is not saved with the setup. They work while the setup is playing. **Master (Windows)** on the source card is the Windows volume of the cable itself.
+- **Channels.** Open a speaker (the arrow on its row) and choose **Stereo**, **Left only**, **Right only**, **Mono** or **Swap sides**.
+- **Timing.** Different speakers take different amounts of time to play a sound, and Bluetooth is usually later than a wired speaker. If you hear an echo, delay the **earlier** speaker (usually the wired one) until the sounds line up. Set its **Delay**, or choose **Compare timing** to see all delays together. You set this by ear; PlayNice does not measure it.
+- **Save, and hear it.** Choose **Save**. Channel and delay changes are then applied to the playing audio **without a restart**. PlayNice shows *Applying…* and says **Applied to the running audio.** only after the audio has taken the change. A delay change is a short cross-fade, so it can be briefly audible. If it says *Saved, but not applied to running audio*, choose **Retry**.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="../assets/screenshots/compare-timing-dark.png">
@@ -196,25 +143,23 @@ Both speakers should now play the browser's sound.
 
 Perfect alignment is not promised. See the [Settings guide](settings-guide.md#speaker-delay-and-compare-timing) for what delay can and cannot do.
 
+## 11. Quit, Stop and coming back
+
+- **Closing the window** hides PlayNice in the system tray (if that option is on, the default) and **audio keeps playing**.
+- **Stop audio** stops the sound but keeps PlayNice running. Opening PlayNice later does **not** start the sound again.
+- **Quit PlayNice** (the **...** menu, the tray menu or Ctrl+Q) stops the sound and closes PlayNice completely. If sound was playing, the **next time you open PlayNice, it starts again by itself and plays that setup again** ("Resuming audio…"). If a speaker is not there at that moment, PlayNice does not substitute another one; it waits a while and then says it could not resume.
+- **Shut down controller** (Settings) is a deliberate full stop: PlayNice does not start its controller by itself the next time; choose **Start controller**.
+- **If a speaker disconnects** (a Bluetooth speaker switching off, a USB device unplugged) the others keep playing, PlayNice shows it as *reconnecting*, tries again for about two minutes, and the speaker rejoins by itself when it comes back. It does not replay what it missed, and it never uses a different device in its place.
+
+The tray icon shows the state with a badge: a green play triangle (playing), a grey square (stopped), a blue clock (starting or stopping), an amber **!** (playing with a problem), a red **X** (failed). Hover over it for the same in words.
+
 ## 12. Optional settings
 
-Open the **...** menu at the top right and choose **Settings…**.
-
-- **Keep PlayNice in the system tray when the window is closed** keeps a tray icon so you can reopen the window.
-- **Start PlayNice at sign-in** starts PlayNice in the tray when you sign in to Windows. It is off until you turn it on.
-- **Drift correction**, **Starvation recovery**, **Priming** and **Limit the level while playing** are explained in the [Settings guide](settings-guide.md).
-
-> *[Screenshot to be added: the complete Settings window. It has not been captured yet; a safe capture needs a native Windows window with no personal information visible.]*
+Open the **...** menu at the top right and choose **Settings…**. **Start PlayNice at sign-in** starts PlayNice in the tray when you sign in to Windows; it is off until you turn it on. **Drift correction**, **Starvation recovery**, **Priming** and **Limit the level while playing** are explained in the [Settings guide](settings-guide.md).
 
 ## 13. Go back to normal Windows audio
 
-You can undo the routing at any time. PlayNice does not need to be involved.
-
-1. In **Settings > System > Sound > Volume mixer**, set the browser's **Output** back to **Default** (or to the device you want).
-2. In PlayNice, choose **Stop audio**. Closing the PlayNice window does **not** stop the audio; **Stop audio** does.
-3. To end the background program too: **...** menu, **Settings…**, **Shut down controller…**.
-
-If a program stays silent after you stop PlayNice, it is probably still pointed at CABLE Input. See [Windows audio is silent after I stop PlayNice](troubleshooting.md#windows-audio-is-silent-after-i-stop-playnice).
+You can undo the routing at any time. In **Settings > System > Sound > Volume mixer**, set the browser's **Output** back to **Default**, and in PlayNice choose **Stop audio** (or **Quit PlayNice**). If a program stays silent after you stop PlayNice, it is probably still pointed at CABLE Input. See [Windows audio is silent after I stop PlayNice](troubleshooting.md#windows-audio-is-silent-after-i-stop-playnice).
 
 VB-CABLE stays installed unless you remove it. PlayNice's uninstaller asks (see [Uninstall](installation.md#uninstall)); you can also use VB-Audio's own instructions.
 

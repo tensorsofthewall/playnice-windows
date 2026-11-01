@@ -19,6 +19,7 @@ body:
         - Volume or mute
         - Audio delay or synchronization
         - Device reconnect or sleep recovery
+        - Test sound
         - Other
     validations:
       required: true

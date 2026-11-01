@@ -23,7 +23,7 @@ body:
     attributes:
       label: PlayNice version
       description: In PlayNice, open the menu and choose About PlayNice. If PlayNice will not open, use the version in the installer's file name or in Settings, Apps, Installed apps; or write "cannot open".
-      placeholder: "For example: 0.1.0-beta.1"
+      placeholder: "For example: 0.1.0-beta.2"
     validations:
       required: true
   - type: input
@@ -42,9 +42,12 @@ body:
         - Choosing the audio source
         - Adding or removing speakers
         - Starting or stopping playback
+        - Quit, closing the window or reopening PlayNice
+        - Test button
+        - Channel or delay changes on Save
         - Settings
         - Start at sign-in
-        - Installer or update
+        - Installer, uninstaller or update (including the installation folder)
         - Window, tray or notifications
         - Exporting a diagnostic report
         - Something else

@@ -21,14 +21,16 @@ example a monitor, a USB headset and a Bluetooth speaker.
 
 ## What you can do
 
-- Play audio on **several speakers together**.
+- Play audio on **several speakers together** (up to four).
 - Use **Bluetooth and wired** outputs in the same setup.
-- **Select an audio source**: the sound of Windows, or of one program, sent to a virtual cable.
+- **Select an audio source**: the sound of Windows, or of one program, sent to a virtual cable. PlayNice can **install the VB-CABLE virtual cable** for you (with your approval) and shows guidance for the last step.
 - Save **speaker setups** and switch between them.
 - Set **volume and mute** for each speaker. These change the speaker's volume in Windows.
 - **Test** each speaker with a short, soft sound before you rely on it, and get guided help when you **can't hear audio**.
-- Choose **channels** for each speaker (stereo, left, right, mono or swapped sides).
-- Adjust **timing by ear** with a delay for each speaker.
+- Choose **channels** for each speaker (stereo, left, right, mono or swapped sides), and adjust **timing by ear** with a delay for each speaker. Channel and delay changes are applied to the playing audio when you **Save**, without a restart.
+- Keep playing when one speaker drops out: a speaker that disconnects (Bluetooth switched off, USB unplugged) **rejoins by itself** when it returns, while the others keep playing.
+- **Open PlayNice and it starts by itself.** After **Quit PlayNice**, opening it again plays the setup that was playing; **Stop audio** is respected.
+- See what is happening from the **tray icon**, whose badge shows playing, stopped, starting, warning or failed.
 - **Start PlayNice at sign-in**, if you want it to.
 
 <picture>
@@ -41,7 +43,7 @@ example a monitor, a USB headset and a Bluetooth speaker.
 | | |
 | --- | --- |
 | **Download** | [v0.1.0-beta.2](https://github.com/tensorsofthewall/playnice-windows/releases/tag/v0.1.0-beta.2) (all [Releases](https://github.com/tensorsofthewall/playnice-windows/releases); betas are marked Pre-release) |
-| **Install** | [Installation](docs/installation.md) |
+| **Install** | [Installation](docs/installation.md). The normal new installation is for all users, in `C:\Program Files\PlayNice` (Windows asks for permission once); you can choose **Install for me only** or another folder. |
 | **First use** | [Getting started](docs/getting-started.md), a walkthrough for beginners |
 | **Every setting** | [Settings guide](docs/settings-guide.md) |
 | **Something wrong?** | [Troubleshooting](docs/troubleshooting.md) |
@@ -55,14 +57,17 @@ To send the sound of Windows (or of one program) to PlayNice, you need a virtual
 **VB-CABLE**, third-party donationware made by VB-Audio Software (<https://www.vb-cable.com>). It is separate from PlayNice and
 VB-Audio's own terms apply to it. If it is missing, PlayNice offers **Install VB-CABLE** on its first screen: you approve VB-Audio's own
 installer, restart Windows, and come back. You can also install it yourself from <https://vb-audio.com/Cable/>. When you uninstall PlayNice
-you can choose to remove VB-CABLE too; keeping it is the default. The [walkthrough](docs/getting-started.md) shows every step.
+you can choose to remove VB-CABLE too, and separately to delete your PlayNice data; keeping both is the default. The [walkthrough](docs/getting-started.md) shows every step.
 
 ## What to expect
 
 PlayNice does not promise that speakers will be perfectly in step. Different devices, and Bluetooth in particular,
-add different delays. You set a delay for each speaker by ear, and an option keeps speakers from drifting apart over
-long sessions. PlayNice does not measure delay for you, does not promise that picture and sound will match in video,
-and does not work with every audio device or every Bluetooth speaker. See [Troubleshooting](docs/troubleshooting.md).
+add different delays, and a Bluetooth speaker can return with a different delay after it reconnects. You set a delay
+for each speaker by ear, and an option keeps speakers from drifting apart over long sessions. PlayNice does not measure
+delay for you, does not promise that picture and sound will match in video, and does not work with every audio device or
+every Bluetooth speaker. Testing and automatic reconnection depend on what Windows reports for each device. Parts of
+beta.2 (a speaker rejoining, live channel and delay changes, resuming after Quit) have been checked with automated tests
+and fake devices, and are still being checked on physical speakers. See [Troubleshooting](docs/troubleshooting.md).
 
 PlayNice never changes your Windows default audio device, or which device a program uses, for you.
 

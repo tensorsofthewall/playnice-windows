@@ -10,7 +10,7 @@ It plays your computer's sound, or the sound of one program, on several audio ou
 
 ## Why do I need VB-CABLE?
 
-Windows plays a program's sound on one device. PlayNice needs a virtual playback device, **CABLE Input**, to receive that sound before it sends it to your speakers. VB-CABLE is a separate donationware product from VB-Audio Software (<https://www.vb-cable.com>). The PlayNice installer carries VB-Audio's package, and PlayNice starts VB-Audio's installer when you choose **Install VB-CABLE**; you can also install it yourself from <https://vb-audio.com/Cable/>. VB-Audio's installer asks for administrator permission and Windows must restart afterwards. See [Getting started](getting-started.md#2-install-vb-cable-from-playnice).
+Windows plays a program's sound on one device. PlayNice needs a virtual playback device, **CABLE Input**, to receive that sound before it sends it to your speakers. VB-CABLE is a separate donationware product from VB-Audio Software (<https://www.vb-cable.com>). The PlayNice installer carries VB-Audio's package, and PlayNice starts VB-Audio's installer when you choose **Install VB-CABLE**; you can also install it yourself from <https://vb-audio.com/Cable/>. VB-Audio's installer asks for administrator permission and Windows must restart afterwards. See [Getting started](getting-started.md#3-install-vb-cable-from-playnice).
 
 ## Will speakers be perfectly in step?
 
@@ -26,11 +26,31 @@ No. It works with audio outputs that Windows lists as playback devices, but not 
 
 ## Does PlayNice change my Windows default audio device?
 
-No. PlayNice never changes your default playback device, and it never changes which device a program uses. You choose what plays to the cable in Windows yourself, usually for one program at a time in the Volume mixer. See [Getting started](getting-started.md#9-start-audio-then-route-one-program-to-the-cable).
+No. PlayNice never changes your default playback device, and it never changes which device a program uses. You choose what plays to the cable in Windows yourself, usually for one program at a time in the Volume mixer. See [Getting started](getting-started.md#8-send-one-program-to-the-cable).
+
+## Does PlayNice include VB-CABLE, and does it install the driver by itself?
+
+The installer carries VB-Audio's unmodified package, but it installs **nothing** on its own. VB-Audio's installer runs only if you choose **Install VB-CABLE** in PlayNice, and Windows then asks for administrator permission and a restart. VB-CABLE stays a separate, third-party donationware product. See [Getting started](getting-started.md#3-install-vb-cable-from-playnice).
+
+## Where is PlayNice installed, and can I choose the folder?
+
+A new installation defaults to **Install for all users** in `C:\Program Files\PlayNice` (Windows asks for permission once). **Install for me only** needs no administrator rights and uses `%LOCALAPPDATA%\Programs\PlayNice`. You can choose another folder on Setup's folder page; Setup refuses unsafe ones and explains why. Existing installations upgrade in place and keep their kind and folder. See [Installation](installation.md#install).
 
 ## Does closing the PlayNice window stop the audio?
 
-No. PlayNice has a window and a background controller that runs the audio. Closing the window, or quitting it, leaves audio running. Use **Stop audio** to stop it. See the [Settings guide](settings-guide.md#controller-shutdown).
+It depends on how it was closed. With **Keep PlayNice in the system tray when the window is closed** on, closing only hides the window and audio keeps playing. **Stop audio** stops the sound and leaves PlayNice running. **Quit PlayNice** stops the sound and closes PlayNice completely (it asks first if sound is playing). With the tray option off, closing the window is the same as Quit. See [Quit, Stop and the tray](settings-guide.md#quit-stop-and-the-tray).
+
+## Will the sound come back when I open PlayNice again?
+
+Only after **Quit PlayNice** while sound was playing: opening PlayNice then starts its controller and plays that setup again. After **Stop audio**, or a deliberate **Shut down controller…**, nothing starts by itself. A missing speaker is waited for a while and never replaced by another device. See [Opening PlayNice again](settings-guide.md#opening-playnice-again).
+
+## Do I have to restart playback to change channels or delay?
+
+No. A changed channel mode or delay is applied to the playing audio when you **Save** it (a delay change is a short cross-fade that may be briefly audible). Adding or removing a speaker, switching one on or off, and changing the audio source still need **Restart to apply changes**. See the [Settings guide](settings-guide.md#saved-applied-and-restarted).
+
+## What happens if a speaker disconnects?
+
+The others keep playing. PlayNice shows the speaker as reconnecting, tries for about two minutes, and puts it back by itself when it returns; it never uses another device in its place. Bluetooth speakers can return with a different latency. If it gives up, choose **Try again**. See [Troubleshooting](troubleshooting.md#a-speaker-keeps-reconnecting-or-recovery-failed).
 
 ## Why are the volume sliders tied to Windows?
 
@@ -38,7 +58,7 @@ Each speaker's slider and mute button change that device's volume and mute in Wi
 
 ## Does it start with Windows?
 
-Only if you turn on **Start PlayNice at sign-in** in Settings. It is off by default. See the [Settings guide](settings-guide.md#start-at-sign-in).
+Only if you turn on **Start PlayNice at sign-in** in Settings. It is off by default. See the [Settings guide](settings-guide.md#start-at-sign-in). (Opening PlayNice yourself starts its background controller; that is separate.)
 
 ## Is PlayNice open source?
 
@@ -46,11 +66,11 @@ No. PlayNice is proprietary software. This repository is for downloads, document
 
 ## Does PlayNice need administrator rights?
 
-Not for the recommended install (**Install for me only**). Only VB-Audio's installer, and its removal tool, ask Windows for administrator permission, and only after you choose **Install VB-CABLE** (or **Remove VB-CABLE** while uninstalling). The VB-Audio driver is signed by VB-Audio and Microsoft; that is separate from PlayNice's own installer, which is currently not signed.
+To **install** PlayNice for all users (the default) Windows asks for administrator permission, as for most programs; **Install for me only** needs none. PlayNice itself always runs as your ordinary account. VB-Audio's installer and removal tool ask for administrator permission too, but only after you choose **Install VB-CABLE** (or **Remove VB-CABLE** while uninstalling). The VB-Audio driver is signed by VB-Audio and Microsoft; that is separate from PlayNice's own installer, which is currently not signed.
 
-## Does uninstalling PlayNice remove VB-CABLE?
+## What does uninstalling PlayNice remove?
 
-Only if you choose it. After you confirm the uninstall, Setup asks **Also uninstall VB-CABLE?**; **Keep VB-CABLE** is the default, a silent uninstall always keeps it, and other programs may use it. Removing it opens VB-Audio's own setup and needs a restart. See [Installation](installation.md#uninstall).
+The program. After you confirm the uninstall, Setup asks two separate questions, and both default to keeping: **Keep or Remove VB-CABLE** (other programs may use it; removal opens VB-Audio's own setup and needs a restart), and **Keep my data or Delete my PlayNice data**. Your saved setups and settings are kept unless you choose to delete them, and a silent uninstall keeps everything. Deleting data is permanent, applies only to the Windows account that ran the uninstaller, and never touches other accounts or files you saved elsewhere. See [Installation](installation.md#uninstall).
 
 ## Windows warns about the installer. What should I do?
 
