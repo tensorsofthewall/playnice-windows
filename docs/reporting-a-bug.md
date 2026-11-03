@@ -11,7 +11,7 @@ A clear report gets a problem fixed sooner. This page shows what to include.
 
 The issue forms ask for **PlayNice version** and **Windows version**. Both are required, because a problem often depends on the exact build.
 
-**If PlayNice opens:** open the **...** menu and choose **About PlayNice**. The version is on the second line (for example `0.1.0-beta.2`). **Copy details** puts it on the clipboard.
+**If PlayNice opens:** open the **...** menu and choose **About PlayNice**. The version is on the second line (for example `0.1.0`). **Copy details** puts it on the clipboard.
 
 **If PlayNice will not open**, use one of these instead:
 

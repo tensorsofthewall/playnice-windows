@@ -20,7 +20,12 @@ This is a small project run by one maintainer. There is no guaranteed response t
 
 ## Supported versions
 
-PlayNice v0.1.0-beta.2 is supported. Only the latest release is supported. PlayNice is in early testing, and fixes are published as new releases, not as patches to older ones.
+| Version | Supported |
+| --- | --- |
+| 0.1.0 | Yes |
+| 0.1.0-beta.2 and earlier betas | No: install 0.1.0 over them (your setups and settings are kept) |
+
+Only the latest release is supported. PlayNice is a young program, and fixes are published as new releases, not as patches to older ones.
 
 ## Not security reports
 

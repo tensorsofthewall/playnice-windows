@@ -10,7 +10,7 @@ It plays your computer's sound, or the sound of one program, on several audio ou
 
 ## Why do I need VB-CABLE?
 
-Windows plays a program's sound on one device. PlayNice needs a virtual playback device, **CABLE Input**, to receive that sound before it sends it to your speakers. VB-CABLE is a separate donationware product from VB-Audio Software (<https://www.vb-cable.com>). The PlayNice installer carries VB-Audio's package, and PlayNice starts VB-Audio's installer when you choose **Install VB-CABLE**; you can also install it yourself from <https://vb-audio.com/Cable/>. VB-Audio's installer asks for administrator permission and Windows must restart afterwards. See [Getting started](getting-started.md#3-install-vb-cable-from-playnice).
+Windows plays a program's sound on one device. PlayNice needs a virtual playback device, **CABLE Input**, to receive that sound before it sends it to your speakers. VB-CABLE is a separate donationware product from VB-Audio Software (<https://www.vb-cable.com>). You install it yourself from <https://vb-audio.com/Cable/>: VB-Audio's installer asks for administrator permission and Windows must restart afterwards. See [Getting started](getting-started.md#3-get-vb-cable-from-vb-audio).
 
 ## Will speakers be perfectly in step?
 
@@ -30,7 +30,7 @@ No. PlayNice never changes your default playback device, and it never changes wh
 
 ## Does PlayNice include VB-CABLE, and does it install the driver by itself?
 
-The installer carries VB-Audio's unmodified package, but it installs **nothing** on its own. VB-Audio's installer runs only if you choose **Install VB-CABLE** in PlayNice, and Windows then asks for administrator permission and a restart. VB-CABLE stays a separate, third-party donationware product. See [Getting started](getting-started.md#3-install-vb-cable-from-playnice).
+No. Neither the installer nor PlayNice contains, downloads, installs or removes VB-CABLE or any other driver. You get it from VB-Audio yourself, and it stays a separate, third-party donationware product. PlayNice only checks that it is there and shows how to install it. See [Getting started](getting-started.md#3-get-vb-cable-from-vb-audio).
 
 ## Where is PlayNice installed, and can I choose the folder?
 
@@ -66,11 +66,11 @@ No. PlayNice is proprietary software. This repository is for downloads, document
 
 ## Does PlayNice need administrator rights?
 
-To **install** PlayNice for all users (the default) Windows asks for administrator permission, as for most programs; **Install for me only** needs none. PlayNice itself always runs as your ordinary account. VB-Audio's installer and removal tool ask for administrator permission too, but only after you choose **Install VB-CABLE** (or **Remove VB-CABLE** while uninstalling). The VB-Audio driver is signed by VB-Audio and Microsoft; that is separate from PlayNice's own installer, which is currently not signed.
+To **install** PlayNice for all users (the default) Windows asks for administrator permission, as for most programs; **Install for me only** needs none. PlayNice itself always runs as your ordinary account. VB-Audio's own installer asks for administrator permission too, when you run it yourself. The VB-Audio driver is signed by VB-Audio and Microsoft; that is separate from PlayNice's own installer, which is currently not signed.
 
 ## What does uninstalling PlayNice remove?
 
-The program. After you confirm the uninstall, Setup asks two separate questions, and both default to keeping: **Keep or Remove VB-CABLE** (other programs may use it; removal opens VB-Audio's own setup and needs a restart), and **Keep my data or Delete my PlayNice data**. Your saved setups and settings are kept unless you choose to delete them, and a silent uninstall keeps everything. Deleting data is permanent, applies only to the Windows account that ran the uninstaller, and never touches other accounts or files you saved elsewhere. See [Installation](installation.md#uninstall).
+The program. After you confirm the uninstall, Setup asks one question, which defaults to keeping: **Keep my data or Delete my PlayNice data**. VB-CABLE is never removed by the uninstaller (other programs may use it); VB-Audio's website describes how to remove it. Your saved setups and settings are kept unless you choose to delete them, and a silent uninstall keeps everything. Deleting data is permanent, applies only to the Windows account that ran the uninstaller, and never touches other accounts or files you saved elsewhere. See [Installation](installation.md#uninstall).
 
 ## Windows warns about the installer. What should I do?
 

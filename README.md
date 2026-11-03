@@ -6,8 +6,9 @@
 
 <p align="center"><strong>Play audio through multiple speakers at once on Windows 11.</strong></p>
 
-> **Status:** PlayNice is in early testing. The newest version is on the [Releases page](https://github.com/tensorsofthewall/playnice-windows/releases)
-> (test versions are marked Pre-release). The installer is not signed.
+> **Status:** PlayNice 0.1.0 is the first release without a beta label; it is still a young program. The newest version is on the
+> [Releases page](https://github.com/tensorsofthewall/playnice-windows/releases). The installer is not signed, so Windows may warn about it
+> (see [Windows warnings](docs/installation.md#windows-warnings)).
 
 PlayNice sends the sound of your computer, or of one program, to several audio outputs at the same time: for
 example a monitor, a USB headset and a Bluetooth speaker.
@@ -23,7 +24,7 @@ example a monitor, a USB headset and a Bluetooth speaker.
 
 - Play audio on **several speakers together** (up to four).
 - Use **Bluetooth and wired** outputs in the same setup.
-- **Select an audio source**: the sound of Windows, or of one program, sent to a virtual cable. PlayNice can **install the VB-CABLE virtual cable** for you (with your approval) and shows guidance for the last step.
+- **Select an audio source**: the sound of Windows, or of one program, sent to a virtual cable. PlayNice checks that the **VB-CABLE** virtual cable, which you install yourself from VB-Audio, is there and working, and shows guidance for the last step.
 - Save **speaker setups** and switch between them.
 - Set **volume and mute** for each speaker. These change the speaker's volume in Windows.
 - **Test** each speaker with a short, soft sound before you rely on it, and get guided help when you **can't hear audio**.
@@ -42,7 +43,7 @@ example a monitor, a USB headset and a Bluetooth speaker.
 
 | | |
 | --- | --- |
-| **Download** | The newest installer on the [Releases page](https://github.com/tensorsofthewall/playnice-windows/releases) (test versions are marked Pre-release) |
+| **Download** | The newest installer on the [Releases page](https://github.com/tensorsofthewall/playnice-windows/releases) |
 | **Install** | [Installation](docs/installation.md). The normal new installation is for all users, in `C:\Program Files\PlayNice` (Windows asks for permission once); you can choose **Install for me only** or another folder. |
 | **First use** | [Getting started](docs/getting-started.md), a walkthrough for beginners |
 | **Every setting** | [Settings guide](docs/settings-guide.md) |
@@ -55,9 +56,10 @@ example a monitor, a USB headset and a Bluetooth speaker.
 
 To send the sound of Windows (or of one program) to PlayNice, you need a virtual audio device. PlayNice works with
 **VB-CABLE**, third-party donationware made by VB-Audio Software (<https://www.vb-cable.com>). It is separate from PlayNice and
-VB-Audio's own terms apply to it. If it is missing, PlayNice offers **Install VB-CABLE** on its first screen: you approve VB-Audio's own
-installer, restart Windows, and come back. You can also install it yourself from <https://vb-audio.com/Cable/>. When you uninstall PlayNice
-you can choose to remove VB-CABLE too, and separately to delete your PlayNice data; keeping both is the default. The [walkthrough](docs/getting-started.md) shows every step.
+VB-Audio's own terms apply to it. PlayNice does not include, download, install or remove it. You get it from VB-Audio: download it from
+<https://vb-audio.com/Cable/>, extract the ZIP file, run `VBCABLE_Setup_x64.exe` as administrator, restart Windows, then open PlayNice again.
+PlayNice shows these steps when the cable is missing, and checks that it works. When you uninstall PlayNice you can choose to delete your
+PlayNice data (keeping it is the default); VB-CABLE is never touched. The [walkthrough](docs/getting-started.md) shows every step.
 
 ## What to expect
 
