@@ -1,82 +1,75 @@
 <p align="center">
-  <img src="assets/playnice-logo.svg" alt="PlayNice logo: two overlapping rings, one blue and one violet" width="120">
+  <img src="assets/playnice-logo.svg" alt="PlayNice logo" width="120">
 </p>
 
 <h1 align="center">PlayNice</h1>
 
-<p align="center"><strong>Play audio through multiple speakers at once on Windows 11.</strong></p>
+<p align="center"><strong>One audio source. Multiple speakers. On Windows 11.</strong></p>
 
-> **Status:** PlayNice 0.1.0 is the first release without a beta label; it is still a young program. The newest version is on the
-> [Releases page](https://github.com/tensorsofthewall/playnice-windows/releases). The installer is not signed, so Windows may warn about it
-> (see [Windows warnings](docs/installation.md#windows-warnings)).
+<p align="center">
+  Play the same sound through up to four speakers at once — including Bluetooth, USB, wired speakers and monitors.
+</p>
 
-PlayNice sends the sound of your computer, or of one program, to several audio outputs at the same time: for
-example a monitor, a USB headset and a Bluetooth speaker.
+<p align="center">
+  <a href="https://github.com/tensorsofthewall/playnice-windows/releases/latest"><strong>Download PlayNice</strong></a>
+  · <a href="docs/getting-started.md">Get started</a>
+  · <a href="https://github.com/tensorsofthewall/playnice-windows/issues/new/choose">Feedback &amp; support</a>
+</p>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/screenshots/outputs-dark.png">
-  <img src="assets/screenshots/outputs-light.png" alt="The PlayNice window playing one setup on two speakers, with the Send audio to PlayNice card, and a volume, mute and Test button for each speaker" width="720">
+  <img src="assets/screenshots/outputs-light.png" alt="PlayNice Outputs screen showing a setup with two speakers and individual controls" width="720">
 </picture>
 
-*The screenshots on this page use made-up device names.*
+*Screenshots use example device names.*
 
 ## What you can do
 
-- Play audio on **several speakers together** (up to four).
-- Use **Bluetooth and wired** outputs in the same setup.
-- **Select an audio source**: the sound of Windows, or of one program, sent to a virtual cable. PlayNice checks that the **VB-CABLE** virtual cable, which you install yourself from VB-Audio, is there and working, and shows guidance for the last step.
-- Save **speaker setups** and switch between them.
-- Set **volume and mute** for each speaker. These change the speaker's volume in Windows.
-- **Test** each speaker with a short, soft sound before you rely on it, and get guided help when you **can't hear audio**.
-- Choose **channels** for each speaker (stereo, left, right, mono or swapped sides), and adjust **timing by ear** with a delay for each speaker. Channel and delay changes are applied to the playing audio when you **Save**, without a restart.
-- Keep playing when one speaker drops out: a speaker that disconnects (Bluetooth switched off, USB unplugged) **rejoins by itself** when it returns, while the others keep playing.
-- **Open PlayNice and it starts by itself.** After **Quit PlayNice**, opening it again plays the setup that was playing; **Stop audio** is respected.
-- See what is happening from the **tray icon**, whose badge shows playing, stopped, starting, warning or failed.
-- **Start PlayNice at sign-in**, if you want it to.
+- **Play on multiple devices.** Combine up to four audio outputs, even when they use different connections.
+- **Adjust each speaker independently.** Control volume and mute, play a test sound, and choose stereo, mono, left, right or swapped channels.
+- **Bring speakers closer into sync.** Adjust per-speaker delays by ear and optionally enable drift correction to help keep playback aligned over time.
+- **Save setups for different situations.** Switch between configurations instead of selecting every speaker again.
+- **Recover from disconnects.** If a device drops out, the other speakers can keep playing while PlayNice waits for it to return. It won't silently substitute another device.
+- **Keep controls within reach.** Use the system tray, and optionally launch PlayNice at sign-in. Opening PlayNice again can resume a setup that was playing when you quit.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/screenshots/manage-setups-dark.png">
-  <img src="assets/screenshots/manage-setups-light.png" alt="The Manage setups window listing three saved setups" width="520">
+  <img src="assets/screenshots/manage-setups-light.png" alt="PlayNice Manage setups screen with saved speaker configurations" width="520">
 </picture>
+
+## How it works
+
+PlayNice takes sound from a virtual audio cable and sends it to the speakers you choose:
+
+```text
+Windows or an app  →  VB-CABLE  →  PlayNice  →  Your speakers
+```
+
+You decide which programs send sound to **CABLE Input**, using Windows sound settings or the Volume Mixer. PlayNice does **not** change your default audio device or another program's routing automatically.
+
+**VB-CABLE is a separate download.** It's donationware made by VB-Audio, not part of PlayNice. Get it from [VB-Audio's official website](https://vb-audio.com/Cable/); PlayNice guides you through the installation steps and checks whether it's working. PlayNice does not download, install or remove VB-CABLE for you.
 
 ## Get started
 
-| | |
-| --- | --- |
-| **Download** | The newest installer on the [Releases page](https://github.com/tensorsofthewall/playnice-windows/releases) |
-| **Install** | [Installation](docs/installation.md). The normal new installation is for all users, in `C:\Program Files\PlayNice` (Windows asks for permission once); you can choose **Install for me only** or another folder. |
-| **First use** | [Getting started](docs/getting-started.md), a walkthrough for beginners |
-| **Every setting** | [Settings guide](docs/settings-guide.md) |
-| **Something wrong?** | [Troubleshooting](docs/troubleshooting.md) |
-| **Report a problem** | [Open an issue](https://github.com/tensorsofthewall/playnice-windows/issues/new/choose) and read [Reporting a problem](docs/reporting-a-bug.md) first |
-| **Suggest a feature** | [Feature request](https://github.com/tensorsofthewall/playnice-windows/issues/new/choose) |
-| **Questions** | [FAQ](docs/faq.md) |
+1. **Download and install PlayNice** from the [latest GitHub release](https://github.com/tensorsofthewall/playnice-windows/releases/latest). It runs on **64-bit Windows 11**.
+2. **Install VB-CABLE** from [VB-Audio](https://vb-audio.com/Cable/) if you haven't already: extract the ZIP, run its 64-bit installer as administrator, and restart Windows.
+3. **Create a speaker setup** in PlayNice and select the devices you want to hear.
+4. **Send audio to CABLE Input** from Windows sound settings or the Volume Mixer, then start playback and adjust each speaker as needed.
 
-## VB-CABLE is a separate product
+For screenshots and detailed instructions, see the [Getting started guide](docs/getting-started.md). If you need the Microsoft Visual C++ runtime, see [Installation](docs/installation.md).
 
-To send the sound of Windows (or of one program) to PlayNice, you need a virtual audio device. PlayNice works with
-**VB-CABLE**, third-party donationware made by VB-Audio Software (<https://www.vb-cable.com>). It is separate from PlayNice and
-VB-Audio's own terms apply to it. PlayNice does not include, download, install or remove it. You get it from VB-Audio: download it from
-<https://vb-audio.com/Cable/>, extract the ZIP file, run `VBCABLE_Setup_x64.exe` as administrator, restart Windows, then open PlayNice again.
-PlayNice shows these steps when the cable is missing, and checks that it works. When you uninstall PlayNice you can choose to delete your
-PlayNice data (keeping it is the default); VB-CABLE is never touched. The [walkthrough](docs/getting-started.md) shows every step.
+> **Windows security notice:** PlayNice is currently **unsigned**. SmartScreen may warn about it, and Smart App Control may block it. PlayNice does not recommend disabling Windows security protections to install it. Read the [installation guidance](docs/installation.md#windows-warnings) before proceeding.
 
-## What to expect
+## Current limitations
 
-PlayNice does not promise that speakers will be perfectly in step. Different devices, and Bluetooth in particular,
-add different delays, and a Bluetooth speaker can return with a different delay after it reconnects. You set a delay
-for each speaker by ear, and an option keeps speakers from drifting apart over long sessions. PlayNice does not measure
-delay for you, does not promise that picture and sound will match in video, and does not work with every audio device or
-every Bluetooth speaker. Testing and automatic reconnection depend on what Windows reports for each device. Some features
-(a speaker rejoining, live channel and delay changes, resuming after Quit) have been checked with automated tests
-and fake devices, and are still being checked on physical speakers. See [Troubleshooting](docs/troubleshooting.md).
+PlayNice aims for perceptually aligned multi-speaker playback, **not sample-perfect synchronization**. Different devices—especially Bluetooth speakers—may have different or changing delays. For now, delay adjustment is manual, automatic acoustic calibration is not available, and **video lip-sync is not guaranteed**.
 
-PlayNice never changes your Windows default audio device, or which device a program uses, for you.
+Adding or removing a speaker, or changing the audio source, requires restarting audio. Channel and delay changes to an existing speaker take effect after you save them. Updates are installed manually.
 
-## About this repository
+## Help and feedback
 
-PlayNice is **proprietary software**. This repository is for downloads, documentation and support. It does not
-contain the program's source code and is not open source.
+- [Troubleshooting](docs/troubleshooting.md) · [FAQ](docs/faq.md) · [Settings guide](docs/settings-guide.md)
+- [Report a bug or suggest a feature](https://github.com/tensorsofthewall/playnice-windows/issues/new/choose)
+- [Report a security issue privately](https://github.com/tensorsofthewall/playnice-windows/security/advisories/new)
 
-- [Security policy](SECURITY.md)
-- [Third-party notices](THIRD-PARTY-NOTICES.md)
+PlayNice is **proprietary software**. This public repository hosts downloads, documentation and support, not the application's source code. See the [security policy](SECURITY.md) and [third-party notices](THIRD-PARTY-NOTICES.md). PlayNice is not affiliated with VB-Audio.
